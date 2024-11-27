@@ -16,7 +16,12 @@ It will also outline the process for submitting data to the database, as well as
 
 # Overview:
 
-Data submission to WP6 is best undertaken in a series of steps, with checkpoints with the data curators along each step of the way. 
+Data submission to WP6 is best undertaken in a series of steps, with checkpoints with the data curators along each step of the way:
+
+```mermaid
+graph TD; 
+A-->B
+```
 
 1. Identify data fields in your data that map to fields in the data standard. 
 2. Identify data fields in the standard that could be applicable to your own data (even if they are not directly
