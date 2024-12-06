@@ -57,7 +57,7 @@ wgs("`**Whole Genome Sequences**`")
 sam ---->
 mtg("`**Metagenomic Sequences**"
      eg., 16S, Shotgun Metagenomics,
-     Bait Capture`)
+     Bait Capture`")
 iso -->
 ast("`**Antimicrobial Susceptibility Testing** 
      e.g., Sensititre`")
