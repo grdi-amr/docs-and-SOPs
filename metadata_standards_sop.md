@@ -55,7 +55,7 @@ iso("`**Isolates**
      _Klebsiella_, etc.`") -->
 wgs("`**Whole Genome Sequences**`")
 sam ---->
-mtg("`**Metagenomic Sequences**"
+mtg("`**Metagenomic Sequences**
      eg., 16S, Shotgun Metagenomics,
      Bait Capture`")
 iso -->
