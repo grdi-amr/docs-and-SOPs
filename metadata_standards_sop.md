@@ -45,9 +45,22 @@ In general, it is likely that metadata collected follows a similar h
 ```mermaid
 graph TD;
 
-sam("`**Samples** \nenvironemental, \nfood samples, \nfarm/animal products`") --> iso("Isolates") --> wgs("Whole Genome Sequences")
-sam --> mtg("Metagenomic Sequences")
-iso --> ast("Antimicrobial Susceptibility Testing")
+sam("`**Samples**
+     environemental,
+     food samples,
+     farm/animal products`") -->
+iso("`**Isolates**
+     e.g., _E. coli_,
+     _Salmonella_,
+     _Klebsiella_, etc.`") -->
+wgs("`**Whole Genome Sequences**`")
+sam ---->
+mtg("`**Metagenomic Sequences**"
+     eg., 16S, Shotgun Metagenomics,
+     Bait Capture`)
+iso -->
+ast("`**Antimicrobial Susceptibility Testing** 
+     e.g., Sensititre`")
 
 ```
 
