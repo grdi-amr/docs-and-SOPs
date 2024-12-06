@@ -40,13 +40,13 @@ At this point, two different tools have been made accessible to help researchers
 
 # Overview:
 
-In general, it is likely that metadata collected follows a similar h
+In general, it is likely that metadata collected follows a similar hierarchical structure.
 
 ```mermaid
 graph TD;
 
 sam("`**Samples**
-     environemental,
+     environmental,
      food samples,
      farm/animal products`") -->
 iso("`**Isolates**
@@ -64,8 +64,15 @@ ast("`**Antimicrobial Susceptibility Testing**
 
 ```
 
+Samples are taken
+
+Many 
 
 Data submission to WP6 is best undertaken in a series of steps, with checkpoints with the data curators along each step of the way to catch errors quickly and assess/add new terms or fields as needed:
+
+
+
+
 
 
 1. Identify data fields in your data that map to fields in the data standard. 
@@ -78,6 +85,16 @@ The data harmonization and submission process is best
 
 
 # How to harmonize
+
+```mermaid
+
+graph TD;
+
+A@{ shape: lin-cyl, label: "VMR" }
+
+
+
+```
 
 There are two options to begin the harmonization of your data
 
