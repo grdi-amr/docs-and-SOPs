@@ -46,9 +46,9 @@ In general, it is likely that metadata collected follows a similar h
 graph TD;
 
 sam("`**Samples**
-e.g. environemental, 
-food samples, 
-farm/animal products`") --> iso("Isolates") --> wgs("Whole Genome Sequences")
+- environemental,
+- food samples,
+- farm/animal products`") --> iso("Isolates") --> wgs("Whole Genome Sequences")
 sam --> mtg("Metagenomic Sequences")
 iso --> ast("Antimicrobial Susceptibility Testing")
 
