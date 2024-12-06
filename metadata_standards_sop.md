@@ -40,14 +40,14 @@ At this point, two different tools have been made accessible to help researchers
 
 # Overview:
 
-In general, it is likely that researcher's data
+In general, it is likely that metadata collected follows a similar h
 
 ```mermaid
 graph TD;
 
-sam("Samples") --> iso("Isolates") --> wgs(Whole\nGenome\nSequences) --> 
-sam --> mtg(Metagenomic\nSequences)
-iso --> ast(Antimicrobial\nSusceptibility\nTesting)
+sam("`**Samples**`") --> iso("Isolates") --> wgs("Whole Genome Sequences")
+sam --> mtg("Metagenomic Sequences")
+iso --> ast("Antimicrobial Susceptibility Testing")
 
 ```
 
