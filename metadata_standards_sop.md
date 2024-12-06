@@ -54,11 +54,11 @@ iso("`**Isolates**
      _Salmonella_,
      _Klebsiella_, etc.`") -->
 wgs("`**Whole Genome Sequences**`")
-sam ---->
+sam --->
 mtg("`**Metagenomic Sequences**
      eg., 16S, Shotgun Metagenomics,
      Bait Capture`")
-iso -->
+iso --->
 ast("`**Antimicrobial Susceptibility Testing** 
      e.g., Sensititre`")
 
