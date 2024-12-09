@@ -109,8 +109,9 @@ Rather then standardizing all the data at the end of the collection or research 
 graph TD;
 
 A_note@{ shape: brace-r, label: "Sort samples into discrete groups of metadata descriptors"}
-A@{ shape: processes , label: "Identify metadata sets"}
+A@{ shape: processes, label: "Identify metadata sets"}
 curators@{ shape: rounded, label: "Curators"}
+
 A <- "Send formatted sheet via email" -> curators
 vmr@{ shape: lin-cyl, label: "VMR" }
 
