@@ -109,8 +109,7 @@ Rather then standardizing all the data at the end of the collection or research 
 graph TD;
 
 A@{ shape: processes , label: "Identify metadata sets"}
-B@{ shape: brace-r,
-    label: "Sort samples into discrete groups of metadata descriptors"}
+B@{ shape: brace-r, label: "Sort samples into discrete groups of metadata descriptors"}
 C@{ shape: lin-cyl, label: "VMR" }
 
 ```
