@@ -112,7 +112,7 @@ A_note@{ shape: brace-r, label: "Sort samples into discrete groups of metadata d
 A@{ shape: processes, label: "Identify metadata sets"}
 curators@{ shape: rounded, label: "Curators"}
 
-A <- "Send formatted sheet via email" -> curators
+A <-- "Send formatted sheet via email" --> curators
 vmr@{ shape: lin-cyl, label: "VMR" }
 
 ```
