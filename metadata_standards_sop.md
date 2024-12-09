@@ -112,6 +112,8 @@ subgraph User
     direction TB
     A_note@{ shape: brace-r, label: "Sort samples into discrete groups of metadata descriptors"}
     A@{ shape: processes, label: "Identify metadata sets"}
+    B@{ shape: docs, label: "Standardized metadata sets"}
+    A --> B
 end
 
 subgraph curation
