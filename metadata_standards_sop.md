@@ -64,15 +64,35 @@ ast("`**Antimicrobial Susceptibility Testing**
 
 ```
 
-Samples are taken
+In general, the researcher takes _samples_ of whatever it is they are studying, be it a food product, animal or human tissue or waste, or environmental samples of water, soil, or wasterwater (and etc).
+From these samples, the researcher might _isolate_ microorganisms for further study.
+Most researchers of GRDI-AMR2 are leveraging genomic sequencing in some capacity.
+Bacterial isolates might be processed for whole genome sequences, or samples might be processed for shotgun metagenomics or bait capture.
+In addition, some bacterial isolates might be sent off for antimicrobial susceptibility testing.
+Throughout, it is possible that many isolates might be taken from a single sample, or perhaps none at all.
+Similarly, an isolate might be sequenced multiple times.
+Some projects have opted not to isolate any bacteria from their samples at all, opting instead for a pure metagenomics approach.
 
-Many 
-
-Data submission to WP6 is best undertaken in a series of steps, with checkpoints with the data curators along each step of the way to catch errors quickly and assess/add new terms or fields as needed:
+Data submission to WP6 is best undertaken in a series of steps, with checkpoints with the data curators along each step of the way to catch errors quickly and assess/add new terms or fields as needed.
 
 
+## Identifying sample types
 
+There are many fields that can be filled out in the GRDI-AMR OneHealth data standard.
+Not all of them will be applicable to every research project or work-package.
+However, we ask researchers to fill out the template as completely as possible, even if the fields are of no interest to your particular research questions.
+For example, in a project taking feces samples from farms, the researcher might be concerned only with the organism (e.g., cow, chicken, pig).
+Even so, the data standard has fields that request additional information, such as the breed, farming purpose (e.g., meat or dairy production), and even farming practices (e.g., conventional or organic).
+Your own research question
 
+Therefore, the first step in the data harmonization is to identify any fields that you might reasonably apply to your samples.
+Look through the fields and their descriptions to see if any apply. 
+Taking a look at the allowed terms might help with deciding if a field could applies.
+The GitHub repo of the standard contains both field descriptions, possible terms, and SOPs for filling out fields; this documentation can be found at these links.
+
+Even relatively modest sampling plans might still have 100 samples, and filling out each field, for each sample, might be prohibitively arduous.
+Fortunately, it is likely that your samples can be grouped into discrete sets that share metadata fields.
+For example
 
 
 1. Identify data fields in your data that map to fields in the data standard. 
@@ -81,8 +101,6 @@ Data submission to WP6 is best undertaken in a series of steps, with checkpoints
 
 Rather then standardizing all the data at the end of the collection or research process
 
-The data harmonization and submission process is best
-
 
 # How to harmonize
 
@@ -90,9 +108,10 @@ The data harmonization and submission process is best
 
 graph TD;
 
-A@{ shape: lin-cyl, label: "VMR" }
-
-
+A@{ shape: processes , label: "Identify metadata sets"}
+B@{ shape: brace-r,
+    label: "Sort samples into discrete groups of metadata descriptors"}
+C@{ shape: lin-cyl, label: "VMR" }
 
 ```
 
