@@ -110,10 +110,15 @@ graph TD;
 
 A_note@{ shape: brace-r, label: "Sort samples into discrete groups of metadata descriptors"}
 A@{ shape: processes, label: "Identify metadata sets"}
-curators@{ shape: rounded, label: "Curators"}
+
+subgraph curation
+    direction TB
+    curators@{ shape: rounded, label: "Curators"}
+    vmr@{ shape: lin-cyl, label: "VMR" }
+    curators --> vmr
+end
 
 A <-- "Send formatted sheet via email" --> curators
-vmr@{ shape: lin-cyl, label: "VMR" }
 
 ```
 
