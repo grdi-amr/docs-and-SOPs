@@ -124,7 +124,7 @@ subgraph curation
     curators --> vmr
 end
 
-A <-- "Send formatted sheet via email" --> curators
+B <-- "Send formatted sheet via email" --> curators
 
 ```
 
