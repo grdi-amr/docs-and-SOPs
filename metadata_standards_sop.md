@@ -6,6 +6,8 @@ Since metadata associated with each project is likely to look very different fro
 This SOP outlines the workflow for handling sample and isolate data, sequence submission, metadata curation.
 It will also outline the process for submitting data to the database, as well as to the NCBI and IRIDA.
 
+For this SOP, we will be using some example data to help clarify. 
+
 # Terms
 
 - **The Virtual Microbial Resource (VMR):** The central database that is storing the metadata.
@@ -73,7 +75,10 @@ Throughout, it is possible that many isolates might be taken from a single sampl
 Similarly, an isolate might be sequenced multiple times.
 Some projects have opted not to isolate any bacteria from their samples at all, opting instead for a pure metagenomics approach.
 
-Data submission to WP6 is best undertaken in a series of steps, with checkpoints with the data curators along each step of the way to catch errors quickly and assess/add new terms or fields as needed.
+Data submission to WP6 is best undertaken in a series of steps, with checkpoints with the data curators along the way to catch errors quickly and assess/add new terms or fields as needed.
+
+1. Identify data fields in the standard that could be applicable to your own data (even if they are not directly applicable to your own research goals)
+2. Group 
 
 
 ## Identifying sample types
@@ -83,21 +88,32 @@ Not all of them will be applicable to every research project or work-package.
 However, we ask researchers to fill out the template as completely as possible, even if the fields are of no interest to your particular research questions.
 For example, in a project taking feces samples from farms, the researcher might be concerned only with the organism (e.g., cow, chicken, pig).
 Even so, the data standard has fields that request additional information, such as the breed, farming purpose (e.g., meat or dairy production), and even farming practices (e.g., conventional or organic).
-Your own research question
 
 Therefore, the first step in the data harmonization is to identify any fields that you might reasonably apply to your samples.
 Look through the fields and their descriptions to see if any apply. 
 Taking a look at the allowed terms might help with deciding if a field could applies.
 The GitHub repo of the standard contains both field descriptions, possible terms, and SOPs for filling out fields; this documentation can be found at these links.
 
-Even relatively modest sampling plans might still have 100 samples, and filling out each field, for each sample, might be prohibitively arduous.
+Even relatively modest sampling plans might still have hundreds of samples, and filling out each field, for each sample, might be prohibitively arduous.
 Fortunately, it is likely that your samples can be grouped into discrete sets that share metadata fields.
-For example
+For example, while WP4.2's stone fruit data consists of 163 samples, these samples can broadly be grouped into 6 types:
+
+| Field Name                           | Frozen coconut-chunks                                                                    | Frozen coconut-shredded                                                                                  | Frozen Mango                                                                             | Frozen Avocado                                                                             | Frozen Peaches                                                                           |
+| ---                                  | ---                                                                                      | ---                                                                                                      | ---                                                                                      | ---                                                                                        | ---                                                                                      |
+| sample_collected_by                  | Canadian Food Inspection Agency (CFIA) [GENEPIO:0100552]                                 | Canadian Food Inspection Agency (CFIA) [GENEPIO:0100552]                                                 | Canadian Food Inspection Agency (CFIA) [GENEPIO:0100552]                                 | Canadian Food Inspection Agency (CFIA) [GENEPIO:0100552]                                   | Canadian Food Inspection Agency (CFIA) [GENEPIO:0100552]                                 |
+| purpose_of_sampling                  | Survey study [GENEPIO:0100582]                                                           | Survey study [GENEPIO:0100582]                                                                           | Survey study [GENEPIO:0100582]                                                           | Survey study [GENEPIO:0100582]                                                             | Survey study [GENEPIO:0100582]                                                           |
+| presampling_activity                 | Not Applicable [GENEPIO:0001619]                                                         | Not Applicable [GENEPIO:0001619]                                                                         | Not Applicable [GENEPIO:0001619]                                                         | Not Applicable [GENEPIO:0001619]                                                           | Not Applicable [GENEPIO:0001619]                                                         |
+| presampling_activity_details         | Not Applicable [GENEPIO:0001619]                                                         | Not Applicable [GENEPIO:0001619]                                                                         | Not Applicable [GENEPIO:0001619]                                                         | Not Applicable [GENEPIO:0001619]                                                           | Not Applicable [GENEPIO:0001619]                                                         |
+| specimen_processing                  | Isolated from single source [GENEPIO:0100926]                                            | Isolated from single source [GENEPIO:0100926]                                                            | Isolated from single source [GENEPIO:0100926]                                            | Isolated from single source [GENEPIO:0100926]                                              | Isolated from single source [GENEPIO:0100926]                                            |
+| geo_loc_name (country)               | Canada [GAZ:00002560]                                                                    | Canada [GAZ:00002560]                                                                                    | Canada [GAZ:00002560]                                                                    | Canada [GAZ:00002560]                                                                      | Canada [GAZ:00002560]                                                                    |
+| geo_loc_name (state/province/region) | Ontario [GAZ:00002563]                                                                   | Ontario [GAZ:00002563]                                                                                   | Ontario [GAZ:00002563]                                                                   | Ontario [GAZ:00002563]                                                                     | Ontario [GAZ:00002563], Quebec [GAZ:00002569]                                            |
+| original_sample_description          | Frozen coconut-chunks                                                                    | Frozen coconut-shredded                                                                                  | Frozen Mango                                                                             | Frozen Avocado                                                                             | Frozen Peaches                                                                           |
+| environmental_site                   | Retail environment [ENVO:01001448]                                                       | Retail environment [ENVO:01001448]                                                                       | Retail environment [ENVO:01001448]                                                       | Retail environment [ENVO:01001448]                                                         | Retail environment [ENVO:01001448]                                                       |
+| food_product                         | coconut meat (frozen) [FOODON_00003857]                                                  | coconut meat (frozen) [FOODON_00003857]                                                                  | Mango [FOODON:00003538]                                                                  | Avocado [FOODON:00003600]                                                                  | Peach (frozen) [FOODON:03301272]                                                         |
+| food_product_properties              | Ready-to-eat (RTE) [FOODON:03316636]; sliced [FOODON:03430137]; frozen [FOODON:03302148] | Ready-to (RTE) [FOODON:03316636]; sliced, thin, below 0.5 cm [FOODON:03430145]; frozen [FOODON:03302148] | Ready-to-eat (RTE) [FOODON:03316636]; sliced [FOODON:03430137]; frozen [FOODON:03302148] | Ready-to-eat (RTE) [FOODON:03316636]; ; sliced [FOODON:03430137]; frozen [FOODON:03302148] | Ready-to-eat (RTE) [FOODON:03316636]; sliced [FOODON:03430137]; frozen [FOODON:03302148] |
+| food_packaging                       | Plastic bag, sack or pouch [FOODON:03490166]                                             | Plastic bag, sack or pouch [FOODON:03490166]                                                             | Plastic bag, sack or pouch [FOODON:03490166]                                             | Plastic bag, sack or pouch [FOODON:03490166]                                               | Plastic bag, sack or pouch [FOODON:03490166]                                             |
 
 
-1. Identify data fields in your data that map to fields in the data standard. 
-2. Identify data fields in the standard that could be applicable to your own data (even if they are not directly
-   applicable to your own research goals) 
 
 Rather then standardizing all the data at the end of the collection or research process
 
@@ -113,8 +129,12 @@ subgraph User
     A_note@{ shape: brace-r, label: "Sort samples into discrete groups of metadata descriptors"}
     A_note ~~~ B
     A@{ shape: processes, label: "Identify metadata sets"}
-    B@{ shape: docs, label: "Standardized metadata sets"}
+    B@{ shape: docs, label: "Standardize metadata sets"}
     A --> B
+    C@{ shape: docs, label: "Standardize other fields ()"} -->
+    D@{ shape: docs, "Relate samples to metadata sets" }
+    E@{ shape: docs, "Standardize sequence metadata" }
+    F@{ shape: docs, "AST data" }
 end
 
 subgraph curation
