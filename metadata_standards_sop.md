@@ -80,6 +80,17 @@ Data submission to WP6 is best undertaken in a series of steps, with checkpoints
 1. Identify data fields in the standard that could be applicable to your own data (even if they are not directly applicable to your own research goals)
 2. Group 
 
+# Sample and collection information
+
+## A note on sample names
+
+You likely have assigned a sample ID of some kind to your data.
+This should be designated as the "sample_collector_sample_id" field in the standard.
+For the purposes of the GRDI-AMR2 Project, we expect sample IDs to be *unique across the entire project*.
+Therefore, sample IDs that are too short or generic are not acceptable (for example, sample names consisting only of a short string of alphanumerics).
+In addition, please refrain from populating a sample ID with metadata (e.g., canada-coconut-01A).
+We recommend (TODO: What does Cathy like?)
+However, if you do need to change your sample IDs, please put the original ID in the alternative_sample_IDS column, in case you or another researcher needs to refer to them again.
 
 ## Identifying sample types
 
@@ -100,23 +111,41 @@ For example, while WP4.2's stone fruit data consists of 163 samples, these sampl
 
 | Field Name                           | Frozen coconut-chunks                                                                    | Frozen coconut-shredded                                                                                  | Frozen Mango                                                                             | Frozen Avocado                                                                             | Frozen Peaches                                                                           |
 | ---                                  | ---                                                                                      | ---                                                                                                      | ---                                                                                      | ---                                                                                        | ---                                                                                      |
+| original_sample_description          | Frozen coconut-chunks                                                                    | Frozen coconut-shredded                                                                                  | Frozen Mango                                                                             | Frozen Avocado                                                                             | Frozen Peaches                                                                           |
 | sample_collected_by                  | Canadian Food Inspection Agency (CFIA) [GENEPIO:0100552]                                 | Canadian Food Inspection Agency (CFIA) [GENEPIO:0100552]                                                 | Canadian Food Inspection Agency (CFIA) [GENEPIO:0100552]                                 | Canadian Food Inspection Agency (CFIA) [GENEPIO:0100552]                                   | Canadian Food Inspection Agency (CFIA) [GENEPIO:0100552]                                 |
 | purpose_of_sampling                  | Survey study [GENEPIO:0100582]                                                           | Survey study [GENEPIO:0100582]                                                                           | Survey study [GENEPIO:0100582]                                                           | Survey study [GENEPIO:0100582]                                                             | Survey study [GENEPIO:0100582]                                                           |
-| presampling_activity                 | Not Applicable [GENEPIO:0001619]                                                         | Not Applicable [GENEPIO:0001619]                                                                         | Not Applicable [GENEPIO:0001619]                                                         | Not Applicable [GENEPIO:0001619]                                                           | Not Applicable [GENEPIO:0001619]                                                         |
-| presampling_activity_details         | Not Applicable [GENEPIO:0001619]                                                         | Not Applicable [GENEPIO:0001619]                                                                         | Not Applicable [GENEPIO:0001619]                                                         | Not Applicable [GENEPIO:0001619]                                                           | Not Applicable [GENEPIO:0001619]                                                         |
-| specimen_processing                  | Isolated from single source [GENEPIO:0100926]                                            | Isolated from single source [GENEPIO:0100926]                                                            | Isolated from single source [GENEPIO:0100926]                                            | Isolated from single source [GENEPIO:0100926]                                              | Isolated from single source [GENEPIO:0100926]                                            |
 | geo_loc_name (country)               | Canada [GAZ:00002560]                                                                    | Canada [GAZ:00002560]                                                                                    | Canada [GAZ:00002560]                                                                    | Canada [GAZ:00002560]                                                                      | Canada [GAZ:00002560]                                                                    |
 | geo_loc_name (state/province/region) | Ontario [GAZ:00002563]                                                                   | Ontario [GAZ:00002563]                                                                                   | Ontario [GAZ:00002563]                                                                   | Ontario [GAZ:00002563]                                                                     | Ontario [GAZ:00002563], Quebec [GAZ:00002569]                                            |
-| original_sample_description          | Frozen coconut-chunks                                                                    | Frozen coconut-shredded                                                                                  | Frozen Mango                                                                             | Frozen Avocado                                                                             | Frozen Peaches                                                                           |
 | environmental_site                   | Retail environment [ENVO:01001448]                                                       | Retail environment [ENVO:01001448]                                                                       | Retail environment [ENVO:01001448]                                                       | Retail environment [ENVO:01001448]                                                         | Retail environment [ENVO:01001448]                                                       |
 | food_product                         | coconut meat (frozen) [FOODON_00003857]                                                  | coconut meat (frozen) [FOODON_00003857]                                                                  | Mango [FOODON:00003538]                                                                  | Avocado [FOODON:00003600]                                                                  | Peach (frozen) [FOODON:03301272]                                                         |
 | food_product_properties              | Ready-to-eat (RTE) [FOODON:03316636]; sliced [FOODON:03430137]; frozen [FOODON:03302148] | Ready-to (RTE) [FOODON:03316636]; sliced, thin, below 0.5 cm [FOODON:03430145]; frozen [FOODON:03302148] | Ready-to-eat (RTE) [FOODON:03316636]; sliced [FOODON:03430137]; frozen [FOODON:03302148] | Ready-to-eat (RTE) [FOODON:03316636]; ; sliced [FOODON:03430137]; frozen [FOODON:03302148] | Ready-to-eat (RTE) [FOODON:03316636]; sliced [FOODON:03430137]; frozen [FOODON:03302148] |
 | food_packaging                       | Plastic bag, sack or pouch [FOODON:03490166]                                             | Plastic bag, sack or pouch [FOODON:03490166]                                                             | Plastic bag, sack or pouch [FOODON:03490166]                                             | Plastic bag, sack or pouch [FOODON:03490166]                                               | Plastic bag, sack or pouch [FOODON:03490166]                                             |
 
+In the above example, we see that many of the fields are actually the same across all the metadata fields (e.g., all the samples are collected by the CFIA, and the "purpose_of_sampling" is always a Survey Study).
+In the data, the "food_product" field might change sample to sample, but is consistent across a sample type, and so only needs to be set once for it to apply to all samples in the group.
+Now, you need only make certain that the curators know which group each sample belongs to.
+We recommend setting the "original_sample_description" to your sample groups for each sample.
 
+Setting metadata values this way has two advantages.
+First, it reduces the amount of labor required to standardize; in the above example, we effectively needed to fill out metadata for only 6 samples, instead of 173.
+Second, it is easier for the metadata curators to glance at the metadata fields and assess if anything is missing, or needs to be changed.
+If your data can be organized like this, we encourage you to do so and send it to the curators before proceeding with the rest of your data.
+An excel sheet to help with this can be found here (TODO: add link). 
 
-Rather then standardizing all the data at the end of the collection or research process
+## Variable sample fields
 
+There are likely fields in your data that are too variable across the samples to be conveniently sorted into groups.
+Date fields, such as "sample_collected_date" and "sample_received_date" are commonly like this.
+How to standardize these fields will depend on how the data is formatted.
+In some cases, it might be as simple as renaming the column, while others might require some converting between formats.
+For categorical fields, this might be as easy as a search-and-replace.
+In the stone fruit data, a variable field is the country of origin.
+First, determine how many unique values there are -- in the stone fruit data, there are 12 (e.g., USA, Peru, India).
+For each value, choose its corresponding ontology term from the possible list of values, and execute a find-and-replace (e.g., USA -> United States of America [GAZ:00002459], Peru -> Peru [GAZ:00002932]).
+
+## A note on "negative" samples. 
+
+In cases where a researcher is studying isolates from a group of samples, but please
 
 # How to harmonize
 
