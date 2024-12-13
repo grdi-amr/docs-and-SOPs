@@ -6,7 +6,31 @@ Since metadata associated with each project is likely to look very different fro
 This SOP outlines the workflow for handling sample and isolate data, sequence submission, metadata curation.
 It will also outline the process for submitting data to the database, as well as to the NCBI and IRIDA.
 
-For this SOP, we will be using some example data to help clarify. 
+For this SOP, we will be using some example data to guide through the submission process.
+This data was collected by Work Package 4.2, and consists of samples from imported foods.
+These samples are pooled and sequenced to identify potential isolates of interest, and if any are found, the samples are further processed to isolate bacteria for downstream analysis.
+A subset of these data: 
+
+| sample ID          | import country           | collection date             | food product            | Processing | Quality Date              |
+| --                 | --                       | --                          | --                      | --         | --                        |
+| CFIA-AMR-2022-0001 | United States of America | Wednesday, August 10, 2022  | Frozen Peaches          | Sliced     | 6/22/2024                 |
+| CFIA-AMR-2022-0002 | Peru                     | Wednesday, August 10, 2022  | Frozen Mango            | Chunks     | 6/16/2024                 |
+| CFIA-AMR-2022-0003 | Peru                     | Wednesday, August 10, 2022  | Frozen Avocado          | Chunks     | 12/16/2023                |
+| CFIA-AMR-2022-0004 | Viet Nam                 | Thursday, December 8, 2022  | Frozen coconut-chunks   | Chunks     | 10/17/2024                |
+| CFIA-AMR-2022-0005 | Viet Nam                 | Tuesday, November 29, 2022  | Frozen Mango            | Sliced     | 1/10/2024                 |
+| CFIA-AMR-2022-0006 | Greece                   | Thursday, December 8, 2022  | Frozen Peaches          | Sliced     | 8/30/2024                 |
+| CFIA-AMR-2022-0007 | United States of America | Thursday, December 8, 2022  | Frozen Peaches          | Sliced     | 11/8/2024                 |
+| CFIA-AMR-2022-0008 | United States of America | Thursday, December 8, 2022  | Frozen Peaches          | Sliced     | 10/11/2024                |
+| CFIA-AMR-2022-0009 | United States of America | Thursday, December 8, 2022  | Frozen Peaches          | Sliced     | 11/21/2024                |
+| CFIA-AMR-2022-0010 | Philippines              | Wednesday, January 11, 2023 | Frozen coconut-shredded | Shredded   | Missing [GENEPIO:0001618] |
+| CFIA-AMR-2022-0011 | Philippines              | Wednesday, January 11, 2023 | Frozen coconut-shredded | Shredded   | Missing [GENEPIO:0001618] |
+| CFIA-AMR-2022-0012 | India                    | Monday, March 20, 2023      | Frozen coconut-shredded | Shredded   | 6/12/2024                 |
+| CFIA-AMR-2022-0013 | India                    | Monday, March 20, 2023      | Frozen coconut-chunks   | Sliced     | 6/8/2024                  |
+| CFIA-AMR-2022-0014 | India                    | Monday, March 20, 2023      | Frozen coconut-shredded | Grated     | 7/15/2024                 |
+| CFIA-AMR-2022-0015 | India                    | Monday, March 20, 2023      | Frozen coconut-shredded | Shredded   | 7/4/2024                  |
+| ...                | ...                      | ...                         | ...                     | ...        | ...                       |
+| CFIA-AMR-2022-0163 | India [GAZ:00002839]     | Monday, March 20, 2023      | Frozen coconut-shredded | Shredded   | 11/27/2024                |
+
 
 # Terms
 
@@ -137,7 +161,7 @@ Setting metadata values this way has two advantages.
 First, it reduces the amount of labor required to standardize; in the above example, we effectively needed to fill out metadata for only 6 samples, instead of 173.
 Second, it is easier for the metadata curators to glance at the metadata fields and assess if anything is missing, or needs to be changed.
 If your data can be organized like this, we encourage you to do so and send it to the curators before proceeding with the rest of your data.
-An excel sheet to help with this can be found here (TODO: add link).
+An example of a sheet you might use to help you with this can be found [on the GCExchange](https://gcxgce.sharepoint.com/:x:/t/100001292/EUiJpom31tlDv8ZDQg8ARiABSp6u8f3MyLo63aN_z-ariQ?e=KCRsqk).
 
 ## Variable sample fields
 
@@ -164,7 +188,7 @@ These samples can still provide valuable information for risk-management and doc
 As with sample names, isolate IDs must be unique across the entire project.
 If you need to rename your isolate IDS, please put their original names under the "alternative_isolate_IDs" column.
 
-As with 
+As with
 
 
 # Sequencing data
@@ -175,30 +199,51 @@ After you have submitted your sample collection metadata (and isolate metadata, 
 Here too is a good opportunity to checkpoint with the curators: Send us a sample of 10-20 sequencing records that you have standardized, and we can verify that the fields are filled out correctly.
 After this has been cleared, you may proceed with sending us sequencing metadata data.
 
+The field "library_ID" is the unique identifier of a sequence.
+These IDs _must be unique_ across your research project.
+
 ## Using IRIDA
 
 The VMR is the ultimate repository for metadata, including sequence metadata.
-However, it _does not_ store the dna sequence data itself (i.e., the data representing the ATGC's of the sample/isolate's DNA).
+However, it _does not_ store the DNA sequence data itself (i.e., the data representing the ATGC's of the sample/isolate's DNA).
 The NML's IRIDA platform is being used for this project to store the raw sequence data.
-Here, we will describe how to upload data to IRIDA.
+Therefore, you will need to be able to access IRIDA to upload your sequence files.
 Note that you will need to activate an account to access the NML's IRIDA instance -- This account is _separate_ to the Science Account you use to access the VPN.
 Contact Emil Jurga OR the [NML's Science IT Helpdesk](mailto:helpdesk@nml-lmn.phac-aspc.gc.ca) to create an account.
 
-1. Log into the NML's Science Network VPN
-2. Log into IRIDA
-3. Create a new project for your data.
-4. Create Samples
-5.
-6.
+1. Log into the [NML's Science Network VPN](TODO)
+2. Log into [IRIDA](ngs-archive.corefacility.ca).
+4. Create a new project for your data.
+5. Add Emil Jurga (irida user: `ejurga`) and Gabriel Wajnberg (irida user: `TODO`) as members to the project, with the "collaborator" role.
+6. Create IRIDA samples
+    - **Note:** IRIDA samples are _not_ sequences. 
+      Create one IRIDA sample for every sample or isolate that has sequence data associated with it.
+    - For whole genome sequences, the irida sample name should be the "isolate_ID".
+    - For metagenomic sequences, the irida sample name should be the "sample_collector_sample_ID".
+    - For sequences derived from "pooled samples", see "Pooled Sequences" Section.
+    - There is no need to add metadata to the IRIDA samples (the metadata will be stored in the VMR which will link to IRIDA)
+7. Upload sequences
 
-IRIDA must be accessed when connected to the Science Network VPN, the link is [ngs-archive.corefacility.ca](ngs-archive.corefacility.ca).
+For creating samples and uploading sequences, there are two options: 
 
+1. For a few samples and sequences, you might opt to use IRIDA's web interface (see instructions [here](https://phac-nml.github.io/irida-documentation/user/tutorials/web-upload/))
+2. For multiple samples, you might instead want to use the IRIDA uploaded tool (see instructions [here](https://github.com/phac-nml/irida-uploader-tutorial))
 
 
 ## Pooled samples for metagenomics
 
+Sometimes, it is necessary to pool samples to obtain enough DNA for a metagenomics library.
+The schema of the VMR database is equipped to deal with this.
+For the purposes of data standardization, assign a unique library ID to the pooled metagenomic sequence, just like other sequences.
+When filling out sequence information for a pooled sample, simply put all the sample IDs in the "sample_collector_sample_ID" column, with each ID separated with a comma.
+For example, with the stone-fruit data.
 
-# How to harmonize
+| sample_collector_sample_ID                                 | library_ID     | sequenced_by                                             | sequencing_platform        | sequencing_instrument            |
+| ---                                                        | ---            | ---                                                      | ---                        | ---                              |
+| CFIA-AMR-2022-0007, CFIA-AMR-2022-0008, CFIA-AMR-2022-0009 | CFIAMT20230001 | Canadian Food Inspection Agency (CFIA) [GENEPIO:0100552] | Illumina [GENEPIO:0001923] | Illumina HiSeq [GENEPIO:0100110] |
+| CFIA-AMR-2022-0010, CFIA-AMR-2022-0011, CFIA-AMR-2022-0012 | CFIAMR20230002 | Canadian Food Inspection Agency (CFIA) [GENEPIO:0100552] | Illumina [GENEPIO:0001923] | Illumina HiSeq [GENEPIO:0100110] |
+
+
 
 ```mermaid
 
@@ -213,9 +258,7 @@ subgraph User
     A --> B
     C@{ shape: docs, label: "Standardize other fields ()"} -->
     D@{ shape: docs, "Relate samples to metadata sets" }
-    E@{ shape: docs, "Standardize sequence metadata" }
-    F@{ shape: docs, "AST data" }
-end
+    E@{ shape: docs, "Standardize sequence metadata" } F@{ shape: docs, "AST data" } end
 
 subgraph curation
     direction TB
@@ -228,15 +271,6 @@ B <-- "Send formatted sheet via email" --> curators
 
 ```
 
-
-Emma Griffiths: emma_griffiths@sfu.ca for metadata curation. 
-
-Metadata needs to be submitted to VMR administrators: 
-
-Emil Jurga: emil.jurga@phac-aspc.gc.ca 
-
-Gabriel Wajnberg: gabriel.wajnberg@inspection.gc.ca 
-
 # Antimicrobial Susceptibility Testing
 
 Many researchers may be producing Antimicrobial Susceptibility Testing (AST) data from isolates.
@@ -247,29 +281,70 @@ For this reason **it is out recommendation that researchers do not standardize t
 Instead, please send your AST data to the curators for us to standardize using our scripts.
 If possible, send the data to the curators in its *most unprocessed form* (e.g., if your data is produced by a Sensititre, please send us its output, rather then importing it into Excel and modifying it).
 
-4. Metadata Field Reference 
-
-If clarification is needed on specific metadata fields in the Data Harmonizer, consult the GRDI AMR One Health Reference Guide. In case of having a metagenomics experiment, use “Metagenome” as a value in “Organism” field. 
-
-# Sequences
-
-5. Uploading Sequencing Data to IRIDA 
-
-    Upload all sequencing files (FASTQ) to IRIDA. 
-
-    Provide access to the VMR administrators to allow them to link metadata with the sequence data. 
-
-    VMR administrators may also provide additional information about the sequences for inclusion in the VMR. 
-
-6. Special Case: Pooled Sequencing 
-
-In cases where a pool of samples is sequenced together: 
-
-    Individual Rows for Each Sample: Ensure that each sample in the pool has its own row in the metadata, as metadata specifics may differ. 
-
-    Library IDs: Even though multiple samples may share the same library ID, each row should represent a distinct sample. 
-
 # Submission to the NCBI
+
+
+
+It is expected that all researchers will eventually submit their metadata to the NCBI's databases as they publish their work.
+For the GRDI-AMR2 project, the metadata of submitted sequences will be formatted according to the [NCBI's One Health Enterics metadata package](https://github.com/CFSAN-Biostatistics/One_Health_Enteric_Package)
+This data standard is similar, but not identical, to the GRDI-AMR One Health Data Standard.
+Fortunately, if you have submitted data to the curators (and it has been inserted into the VMR database), the curators can convert your metadata into the One Health Enterics
+A conversion function is already built into the VMR that can cover both isolates and metagenomic samples, and so your metadata can easily be converted into the NCBI's One Health Enterics package.
+
+Uploading to the SRA is best done alongside the curators, as they can help with some of the tedious aspects of uploading sequences to the NCBI.
+To upload your sequences to the NCBI, you will first need to create or access your NCBI account.
+Next, request access to the Submission Group for the GRDI-AMR2 project (email Gabriel Wajnberg to request access).
+Submitting your data through this group will enable the curators to see and modify your submission, which will help with uploading the correct metadata and facilitate downstream updates to the VMR.
+
+
+## Creating a BioProject
+
+First, you must create a bioproject under which your samples will live.
+
+1. **Submitter**: Put in your contact information. Select the group "Gabriel Wajnberg's shared submissions" as the group
+2. **Project Type**: Select most relevant fields 
+3. **Target**: Fill out relevant fields 
+4. **General Info**: For the box "Is your project part of an umbrella project which is already registered with NCBI", select **"Yes (not very common)"**.
+    - If your collection are isolates:
+        - BioProject accession: PRJNA1076250
+        - Umbrella BioProject description:
+          "The Canadian GRDI-AMR2 project maps the development and transit of AMR through healthcare, animals, plants, wastewater and the environment.
+           This umbrella project is for BACTERIAL ISOLATES collected as part of this initiative"
+    - If your collection are metagenomes: 
+        - BioProject accession: PRJNA1139734
+        - Umbrella BioProject description: 
+          "The Canadian GRDI-AMR2 project maps the development and transit of AMR through healthcare, animals, plants, wastewater and the environment.
+           This umbrella project is for METAGENOMIC SAMPLES collected as part of this initiative"
+    - If you collection consists of _both_ isolates and metagenomes, then please **split your collection into different BioProjects of each type**
+    - If you collection consists of isolates that have been experimentally manipulated (e.g., passaged isolates, transconjugants, mutant strains): 
+        - BioProject accession: PRJNA1143527
+        - Umbrella BioProject description: 
+          "The Canadian GRDI-AMR2 project maps the development and transit of AMR through healthcare, animals, plants, wastewater and the environment.
+           This umbrella project is for EXPERIMENTAL samples collected as part of this initiative"
+    - *Note: I am not sure why you are asked for the umbrella project description here. It is a required field, however, so fill in the provided descriptions*
+5. **BioSample**: Skip this step by hitting "Continue"
+6. **Publications**: Fill in any publications to link to your submission if needed.
+7. **Review and submit**: We recommend contacting the curators before hitting submit for us to review. 
+     If you have submitted under the Submission Group, we will be able to check and submit the BioProject without requiring any more input.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     BioSample Submission: 
 
@@ -281,13 +356,15 @@ In cases where a pool of samples is sequenced together:
 
     Use the following umbrella projects to link your submissions: 
 
-    For bacterial isolates (food, animal, environmental sources): PRJNA1076250 
+    For bacterial isolates (food, animal, environmental sources):  
 
-    For metagenomes (food, animal, environmental sources): PRJNA1139734 
+    For metagenomes (food, animal, environmental sources):  
 
-    For experimental data (e.g., passaged isolates, transconjugants, mutants): PRJNA1143527 
+    For experimental data (e.g., passaged isolates, transconjugants, mutants): k 
 
     Linking Previous Submissions: 
 
     If you need to link previous submissions to these umbrella projects, email bioprojecthelp@ncbi.nlm.nih.gov with the relevant umbrella project ID. 
 
+
+# Sequences
