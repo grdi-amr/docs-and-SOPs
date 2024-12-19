@@ -309,7 +309,7 @@ Fortunately, if you have submitted data to the curators (and it has been inserte
 
 Uploading to the SRA is best done alongside the curators, as they can help with some of the tedious aspects of uploading sequences to the NCBI.
 To upload your sequences to the NCBI, you will first need to create or access your NCBI account.
-Next, request access to the Submission Group for the GRDI-AMR2 project (email [Gabriel Wajnberg](mailto:gabriel.wajnberg@inspection.gc.ca))
+Next, request access to the Submission Group for the GRDI-AMR2 project (email [Gabriel Wajnberg](mailto:gabriel.wajnberg@inspection.gc.ca)).
 Submitting your data through this group will enable the curators to see and modify your submission, which will help with uploading the correct metadata and facilitate downstream updates to the VMR.
 
 
@@ -321,12 +321,12 @@ First, you must create a BioProject under which your samples will live.
 2. **Project Type**: Select most relevant fields
 3. **Target**: Fill out relevant fields
 4. **General Info**: For the box "Is your project part of an umbrella project which is already registered with NCBI", select **"Yes (not very common)"**.
-    - If your collection are isolates:
+    - If your collection consists of sequenced isolates:
         - BioProject accession: PRJNA1076250
         - Umbrella BioProject description:
           "The Canadian GRDI-AMR2 project maps the development and transit of AMR through healthcare, animals, plants, wastewater and the environment.
            This umbrella project is for BACTERIAL ISOLATES collected as part of this initiative"
-    - If your collection are metagenomes:
+    - If your collection consists of metagenomes:
         - BioProject accession: PRJNA1139734
         - Umbrella BioProject description:
           "The Canadian GRDI-AMR2 project maps the development and transit of AMR through healthcare, animals, plants, wastewater and the environment.
