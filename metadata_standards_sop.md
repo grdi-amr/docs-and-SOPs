@@ -15,7 +15,7 @@ It will also outline the process for submitting data to the database, as well as
 For this SOP, we will be using some example data to guide through the submission process.
 This data was collected by Work Package 4.2, and consists of samples from imported foods.
 These samples are pooled and sequenced to identify potential isolates of interest, and if any are found, the samples are further processed to isolate bacteria for downstream analysis.
-A subset of these data: 
+A subset of these data:
 
 | sample ID          | import country           | collection date             | food product            | Processing | Quality Date              |
 | --                 | --                       | --                          | --                      | --         | --                        |
@@ -47,37 +47,39 @@ A subset of these data:
     Access to this network has been extended to all members of the GRDI-AMR2 to support the project.
     Access will be required to upload and access sequences on IRIDA, and view dashboards connected to the VMR.
     While most researchers _should_ already their own science network account, it may need to be renewed.
-    Please contact [Emil Jurga](emil.jurga@phac-aspc.gc.ca) or the [NML's Science IT Helpdesk](mailto:helpdesk@nml-lmn.phac-aspc.gc.ca) to either renew or request an account.
-    The VPN address is [remote.corefacility.ca](remote.corefacility.ca).
-- **IRIDA:** Integrated Rapid Infectious Disease Analysis tool. 
+    Please contact [Emil Jurga](mailto:emil.jurga@phac-aspc.gc.ca) or the [NML's Science IT Helpdesk](mailto:helpdesk@nml-lmn.phac-aspc.gc.ca) to either renew or request an account.
+    The VPN address is [remote.corefacility.ca](http://remote.corefacility.ca).
+- **IRIDA:** Integrated Rapid Infectious Disease Analysis tool.
     This application hosts sequencing data.
-    When connected to the Science Network VPN, the link is [ngs-archive.corefacility.ca](ngs-archive.corefacility.ca).
+    When connected to the Science Network VPN, the link is [ngs-archive.corefacility.ca](http://ngs-archive.corefacility.ca).
 - **The GCExchange:** The website/repository that is being used to share documents, data, and SOPs ([link](https://gcxgce.sharepoint.com/teams/100001292)).
 - **The curators:** These are the people responsible for managing the GRDI-AMR One Health data standard, inputting data into the VMR, double-checking that data has been properly standardized,
     and to help with any other data-related issues.
     They are:
-    - [Emma Griffiths](mailto:emma_griffiths@sfu.ca) (SFU). For high-level questions about the data standard.
+    - [Emma Griffiths](mailto:emma_griffiths@sfu.ca) (SFU). For high-level questions about the data standard, and initial curation check-pointing of sample groups.
     - [Gabriel Wajnberg](mailto:gabriel.wajnberg@inspection.gc.ca) (CFIA). For data submission, data export, NCBI submissions, and data standard new term or field requests.
     - [Emil Jurga](mailto:emil.jurga@phac-aspc.gc.ca) (PHAC). Same as Gabriel Wajnberg, but additionally for questions regarding IRIDA and the Science Network.
 
 ## Tools
 
 Each lab is likely to have their own methods for collecting and storing metadata, from Excel workbooks, to SQL or Microsoft Access or SQL databases, or even plain text files (e.g., CSV or TSV formats).
-Possibly, different formats are used for different types of data. 
+Possibly, different formats are used for different types of data.
 At this point, two different tools have been made accessible to help researchers format their data according to the GRDI-AMR OneHealth data standard:
 
-1. The Excel Workbook ([GitHub repository link](https://github.com/cidgoh/GRDI_AMR_One_Health)).
-   This is an Excel Workbook with the fields and controlled vocabulary implemented. 
-   Different metadata categories are split across different tabs in the workbook.
-   Excel macros are used to combine the sheets at the end, but this functionality is not required to insert the data into the VMR.
-   This method has the advantage of being implemented using a familiar tool to most researchers.
-   However, some researchers might find it slow to use, particularly with datasets comprising many rows.
-   Note that this repo also contains documentation and SOPs regarding the fields and terms of the standard.
-2. The DataHarmonizer ([GitHub repository link](https://github.com/cidgoh/pathogen-genomics-package)).
-   This is a web-based application purpose built to help researchers format data according the pre-defined data standards.
-   It is also based on a spreadsheet layout (e.g., with rows, fields, and cells) but implements multiple useful features such as data-validation, search bars for fields, and help-dialogues.
-   Installation of the tool is relatively simple (instructions at the link).
-   Note that the default data template is **not** the GRDI-AMR2 data standard, make sure to select the GRDI template before proceeding.
+1.  The DataHarmonizer ([GitHub repository link](https://github.com/cidgoh/pathogen-genomics-package)).
+    This is the **recommended** method to standardize your data.
+    It is a web-based application purpose built to help researchers format data according the pre-defined data standards.
+    It is also based on a spreadsheet layout (e.g., with rows, fields, and cells) but implements multiple useful features such as data-validation, search bars for fields, and help-dialogues.
+    Installation of the tool is relatively simple (instructions at the link).
+    Note that the default data template is **not** the GRDI-AMR2 data standard, make sure to select the GRDI template before proceeding.
+
+2.  The Excel Workbook ([GitHub repository link](https://github.com/cidgoh/GRDI_AMR_One_Health)).
+    This is an Excel Workbook with the fields and controlled vocabulary implemented.
+    Different metadata categories are split across different tabs in the workbook.
+    Excel macros are used to combine the sheets at the end, but this functionality is not required to insert the data into the VMR.
+    This method has the advantage of being implemented using a familiar tool to most researchers.
+    However, some researchers might find it slow to use, particularly with datasets comprising many rows.
+    Note that this repo also contains documentation and SOPs regarding the fields and terms of the standard.
 
 ## Overview:
 
@@ -100,12 +102,12 @@ mtg("`**Metagenomic Sequences**
      eg., 16S, Shotgun Metagenomics,
      Bait Capture`")
 iso --->
-ast("`**Antimicrobial Susceptibility Testing** 
+ast("`**Antimicrobial Susceptibility Testing**
      e.g., Sensititre`")
 
 ```
 
-In general, the researcher takes _samples_ of whatever it is they are studying, be it a food product, animal or human tissue or waste, or environmental samples of water, soil, or wastewater (and etc).
+The researcher takes _samples_ of whatever it is they are studying, be it a food product, animal or human tissue or waste, or environmental samples of water, soil, or wastewater (and etc).
 From these samples, the researcher might _isolate_ microorganisms for further study.
 Most researchers of GRDI-AMR2 are leveraging genomic sequencing in some capacity.
 Bacterial isolates might be processed for whole genome sequences, or samples might be processed for shotgun metagenomics or bait capture.
@@ -123,7 +125,7 @@ Whatever the structure of your data, submission to WP6 is best undertaken in par
     - [ ] Determine sample groups with distinct metadata fields.
     - [ ] **Correspond with curators about sample groups**
     - [ ] Relate sample IDs to sample groups
-    - [ ] Standardize remaining fields 
+    - [ ] Standardize remaining fields
     - [ ] **Send sample metadata to curators**
 2. Isolate information:
     - [ ] Standardize fields relating to isolate and strain information
@@ -139,9 +141,13 @@ Whatever the structure of your data, submission to WP6 is best undertaken in par
 4. AST Data:
     - [ ] **Correspond with curators about the nature of your AST data**
     - [ ] Send curators AST data
-5. Exporting to NCBI: 
-    - [ ] **Contact [Gabriel Wajnberg]()Request access to the 
+5. Exporting to NCBI:
+    - [ ] **Contact Gabriel Wajnberg to request access to the GRDI-AMR2 submission group**
     - [ ] Create BioProject
+    - [ ] Create BioSample submission
+    - [ ] **Contact curators to upload formatted metadata to your BioSample submission**
+    - [ ] Create SRA submission
+    - [ ] Use IRIDA uploader to upload sequences to NCBI (if few sequences) _OR_ **Contact curators to upload sequences to SRA**
 
 ## Sample and collection information
 
@@ -152,8 +158,7 @@ This should be designated as the "sample_collector_sample_id" field in the stand
 For the purposes of the GRDI-AMR2 Project, we expect sample IDs to be *unique across the entire project*.
 Therefore, sample IDs that are too short or generic are not acceptable (for example, sample names consisting only of a short string of alphanumerics).
 In addition, please refrain from populating a sample ID with metadata (e.g., canada-coconut-01A) - this can lead to confusion, particularly if downstream metadata is updated.
-We recommend (TODO: What does Cathy like?)
-However, if you do need to change your sample IDs, please put the original ID in the alternative_sample_IDS column, in case you or another researcher needs to refer to them again.
+Please note that *if you do change* your sample IDs, please put the original ID in the alternative_sample_IDS column, in case you or another researcher needs to refer to them again.
 
 ### Identifying sample groups
 
@@ -169,7 +174,7 @@ Look through the fields and their descriptions to see if any apply.
 Taking a look at the allowed terms might help with deciding if a field could applies.
 The GitHub repo of the standard contains both field descriptions, possible terms, and SOPs for filling out fields; this documentation can be found at these links. TODO: add links
 If you are unsure which of your metadata values correspond to which term, then you might want to use the [Ontological Lookup Service](https://www.ebi.ac.uk/ols4) to lookup the ontology term ID
-(e.g., for "coconut meat (frozen)", the ontology IS *FOODON_00003857*) and get its description.
+(e.g., for "coconut meat (frozen)", the ontology ID is *FOODON_00003857*) and get its description.
 This is also a good stage to ask the curators for help.
 In some cases, there might not be a standard term that fits one of your metadata values -- Send an email to the curators and they can add the term for you.
 
@@ -214,10 +219,11 @@ In the stone fruit data, a variable field is the country of origin.
 First, determine how many unique values there are -- in the stone fruit data, there are 12 (e.g., USA, Peru, India).
 For each value, choose its corresponding ontology term from the possible list of values, and execute a find-and-replace (e.g., USA -> United States of America [GAZ:00002459], Peru -> Peru [GAZ:00002932]).
 
-### A note on "negative" samples.
+### Which samples do I include?
 
-There might be cases in which a sample is collected, but results in no useful downstream data (e.g., no isolates are extracted, or no sequences are collected).
-We request that you **include these sample data** when you submit your metadata to the curators.
+In short, all of them.
+Or at least, the ones that you have metadata for.
+This includes samples that were collected, but resulted in no useful downstream data (e.g., no isolates are extracted, or no sequences are collected).
 These samples can still provide valuable information for risk-management and documentation.
 
 ## Isolate metadata
@@ -248,11 +254,11 @@ Note that you will need to activate an account to access the NML's IRIDA instanc
 Contact Emil Jurga OR the [NML's Science IT Helpdesk](mailto:helpdesk@nml-lmn.phac-aspc.gc.ca) to create an account.
 
 1. Log into the [NML's Science Network VPN](TODO)
-2. Log into [IRIDA](ngs-archive.corefacility.ca).
+2. Log into [IRIDA](http://ngs-archive.corefacility.ca).
 4. Create a new project for your data.
 5. Add Emil Jurga (irida user: `ejurga`) and Gabriel Wajnberg (irida user: `TODO`) as members to the project, with the "collaborator" role.
 6. Create IRIDA samples
-    - **Note:** IRIDA samples are _not_ sequences. 
+    - **Note:** IRIDA samples are _not_ sequences.
       Create one IRIDA sample for every sample or isolate that has sequence data associated with it.
     - For whole genome sequences, the irida sample name should be the "isolate_ID".
     - For metagenomic sequences, the irida sample name should be the "sample_collector_sample_ID".
@@ -309,29 +315,29 @@ Submitting your data through this group will enable the curators to see and modi
 First, you must create a BioProject under which your samples will live.
 
 1. **Submitter**: Put in your contact information. Select the group "Gabriel Wajnberg's shared submissions" as the group
-2. **Project Type**: Select most relevant fields 
-3. **Target**: Fill out relevant fields 
+2. **Project Type**: Select most relevant fields
+3. **Target**: Fill out relevant fields
 4. **General Info**: For the box "Is your project part of an umbrella project which is already registered with NCBI", select **"Yes (not very common)"**.
     - If your collection are isolates:
         - BioProject accession: PRJNA1076250
         - Umbrella BioProject description:
           "The Canadian GRDI-AMR2 project maps the development and transit of AMR through healthcare, animals, plants, wastewater and the environment.
            This umbrella project is for BACTERIAL ISOLATES collected as part of this initiative"
-    - If your collection are metagenomes: 
+    - If your collection are metagenomes:
         - BioProject accession: PRJNA1139734
-        - Umbrella BioProject description: 
+        - Umbrella BioProject description:
           "The Canadian GRDI-AMR2 project maps the development and transit of AMR through healthcare, animals, plants, wastewater and the environment.
            This umbrella project is for METAGENOMIC SAMPLES collected as part of this initiative"
     - If you collection consists of _both_ isolates and metagenomes, then please **split your collection into different BioProjects of each type**
-    - If you collection consists of isolates that have been experimentally manipulated (e.g., passaged isolates, transconjugants, mutant strains): 
+    - If you collection consists of isolates that have been experimentally manipulated (e.g., passaged isolates, transconjugants, mutant strains):
         - BioProject accession: PRJNA1143527
-        - Umbrella BioProject description: 
+        - Umbrella BioProject description:
           "The Canadian GRDI-AMR2 project maps the development and transit of AMR through healthcare, animals, plants, wastewater and the environment.
            This umbrella project is for EXPERIMENTAL samples collected as part of this initiative"
     - *Note: I am not sure why you are asked for the umbrella project description here. It is a required field, however, so fill in the provided descriptions*
 5. **BioSample**: Skip this step by hitting "Continue"
 6. **Publications**: Fill in any publications to link to your submission if needed.
-7. **Review and submit**: We recommend contacting the curators before hitting submit for us to review. 
+7. **Review and submit**: We recommend contacting the curators before hitting submit for us to review.
      If you have submitted under the Submission Group, we will be able to check and submit the BioProject without requiring any more input.
 
 ### Create BioSamples
