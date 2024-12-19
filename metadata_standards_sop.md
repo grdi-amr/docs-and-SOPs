@@ -1,4 +1,10 @@
-# Introduction
+# An SOP for the standardizing and submission of GRDI-AMR2 metadata and sequence data
+
+Version 1.0
+
+Written by Emil Jurga and Gabriel Wajnberg
+
+## Introduction
 
 All data collected by researchers participating in the GRDI-AMR2 project is expected to be formatted according to the GRDI-AMR2 One Health standard and collected in a central database (the VMR).
 This is to ensure long-term accessibility of the data and facilitate analyses across labs and departments.
@@ -32,7 +38,7 @@ A subset of these data:
 | CFIA-AMR-2022-0163 | India [GAZ:00002839]     | Monday, March 20, 2023      | Frozen coconut-shredded | Shredded   | 11/27/2024                |
 
 
-# Terms
+## Terms
 
 - **The GRDI-AMR One Health data standard:** The set of fields, terms, and rules that represent how data should be formatted.
 - **The Virtual Microbial Resource (VMR):** The central database that is storing the metadata.
@@ -44,11 +50,17 @@ A subset of these data:
     Please contact [Emil Jurga](emil.jurga@phac-aspc.gc.ca) or the [NML's Science IT Helpdesk](mailto:helpdesk@nml-lmn.phac-aspc.gc.ca) to either renew or request an account.
     The VPN address is [remote.corefacility.ca](remote.corefacility.ca).
 - **IRIDA:** Integrated Rapid Infectious Disease Analysis tool. 
-    This application hosts sequencing data. 
+    This application hosts sequencing data.
     When connected to the Science Network VPN, the link is [ngs-archive.corefacility.ca](ngs-archive.corefacility.ca).
-- **The GCExchange:** The website/repository that is being used to share documents, data, and SOPs (link)
+- **The GCExchange:** The website/repository that is being used to share documents, data, and SOPs ([link](https://gcxgce.sharepoint.com/teams/100001292)).
+- **The curators:** These are the people responsible for managing the GRDI-AMR One Health data standard, inputting data into the VMR, double-checking that data has been properly standardized,
+    and to help with any other data-related issues.
+    They are:
+    - [Emma Griffiths](mailto:emma_griffiths@sfu.ca) (SFU). For high-level questions about the data standard.
+    - [Gabriel Wajnberg](mailto:gabriel.wajnberg@inspection.gc.ca) (CFIA). For data submission, data export, NCBI submissions, and data standard new term or field requests.
+    - [Emil Jurga](mailto:emil.jurga@phac-aspc.gc.ca) (PHAC). Same as Gabriel Wajnberg, but additionally for questions regarding IRIDA and the Science Network.
 
-# Tools 
+## Tools
 
 Each lab is likely to have their own methods for collecting and storing metadata, from Excel workbooks, to SQL or Microsoft Access or SQL databases, or even plain text files (e.g., CSV or TSV formats).
 Possibly, different formats are used for different types of data. 
@@ -67,7 +79,7 @@ At this point, two different tools have been made accessible to help researchers
    Installation of the tool is relatively simple (instructions at the link).
    Note that the default data template is **not** the GRDI-AMR2 data standard, make sure to select the GRDI template before proceeding.
 
-# Overview:
+## Overview:
 
 In general, it is likely that metadata collected follows a similar hierarchical structure.
 
@@ -103,12 +115,37 @@ Similarly, an isolate might be sequenced multiple times.
 Some projects have opted not to isolate any bacteria from their samples at all, opting instead for a pure metagenomics approach.
 Whatever the structure of your data, submission to WP6 is best undertaken in parallel series of steps, with checkpoints with the data curators along the way to catch errors quickly and assess/add new terms or fields as needed.
 
-1. Identify data fields in the standard that could be applicable to your own data (even if they are not directly applicable to your own research goals)
-2. Group 
 
-# Sample and collection information
+## Checklist
 
-## A note on sample names
+1. Sample collection information:
+    - [ ] Determine Project Name and Sample Plan Name for your samples and isolates.
+    - [ ] Determine sample groups with distinct metadata fields.
+    - [ ] **Correspond with curators about sample groups**
+    - [ ] Relate sample IDs to sample groups
+    - [ ] Standardize remaining fields 
+    - [ ] **Send sample metadata to curators**
+2. Isolate information:
+    - [ ] Standardize fields relating to isolate and strain information
+    - [ ] **Send isolate metadata to curators**
+3. Sequence Data:
+    - [ ] Standardize fields relating to sequence information
+    - [ ] **Send sequence information to curators**
+    - [ ] Create IRIDA project for Sequences
+    - [ ] Give **curators** collaborator permission on the IRIDA project
+    - [ ] Create IRIDA samples
+    - [ ] Upload sequences to IRIDA
+    - [ ] **Contact the curators so they can update your data with IRIDA related information**
+4. AST Data:
+    - [ ] **Correspond with curators about the nature of your AST data**
+    - [ ] Send curators AST data
+5. Exporting to NCBI: 
+    - [ ] **Contact [Gabriel Wajnberg]()Request access to the 
+    - [ ] Create BioProject
+
+## Sample and collection information
+
+### A note on sample names
 
 You likely have assigned a sample ID of some kind to your data.
 This should be designated as the "sample_collector_sample_id" field in the standard.
@@ -118,7 +155,7 @@ In addition, please refrain from populating a sample ID with metadata (e.g., can
 We recommend (TODO: What does Cathy like?)
 However, if you do need to change your sample IDs, please put the original ID in the alternative_sample_IDS column, in case you or another researcher needs to refer to them again.
 
-## Identifying sample types
+### Identifying sample groups
 
 There are many fields that can be filled out in the GRDI-AMR OneHealth data standard.
 Not all of them will be applicable to every research project or work-package.
@@ -163,7 +200,7 @@ Second, it is easier for the metadata curators to glance at the metadata fields 
 If your data can be organized like this, we encourage you to do so and send it to the curators before proceeding with the rest of your data.
 An example of a sheet you might use to help you with this can be found [on the GCExchange](https://gcxgce.sharepoint.com/:x:/t/100001292/EUiJpom31tlDv8ZDQg8ARiABSp6u8f3MyLo63aN_z-ariQ?e=KCRsqk).
 
-## Variable sample fields
+### Variable sample fields
 
 After the curators have verified that the sample group metadata looks alright, you can move on to standardizing the rest of the sample collection metadata
 Date fields, such as "sample_collected_date" and "sample_received_date" are commonly too variable to be sorted neatly into groups.
@@ -177,20 +214,20 @@ In the stone fruit data, a variable field is the country of origin.
 First, determine how many unique values there are -- in the stone fruit data, there are 12 (e.g., USA, Peru, India).
 For each value, choose its corresponding ontology term from the possible list of values, and execute a find-and-replace (e.g., USA -> United States of America [GAZ:00002459], Peru -> Peru [GAZ:00002932]).
 
-## A note on "negative" samples.
+### A note on "negative" samples.
 
 There might be cases in which a sample is collected, but results in no useful downstream data (e.g., no isolates are extracted, or no sequences are collected).
 We request that you **include these sample data** when you submit your metadata to the curators.
 These samples can still provide valuable information for risk-management and documentation.
 
-# Isolate metadata
+## Isolate metadata
 
 As with sample names, isolate IDs must be unique across the entire project.
 If you need to rename your isolate IDS, please put their original names under the "alternative_isolate_IDs" column.
 
 As with samples, please provide the metadata for all isolates that your research project has detected (even if they will not go on to be sequenced or otherwise analysed!).
 
-# Sequencing data
+## Sequencing data
 
 Most of the GRDI-AMR2 work packages are leveraging sequencing data of some kind.
 The GRDI-AMR2 data standard has many metadata fields relating to the extraction of DNA (i.e., the preparation of sequencing libraries) and sequencing of libraries (e.g., sequencer make and model).
@@ -242,7 +279,7 @@ For example, with the stone-fruit data:
 | CFIA-AMR-2022-0010, CFIA-AMR-2022-0011, CFIA-AMR-2022-0012 | CFIAMR20230002 | Canadian Food Inspection Agency (CFIA) [GENEPIO:0100552] | Illumina [GENEPIO:0001923] | Illumina HiSeq [GENEPIO:0100110] |
 
 
-# Antimicrobial Susceptibility Testing
+## Antimicrobial Susceptibility Testing
 
 Many researchers may be producing Antimicrobial Susceptibility Testing (AST) data from isolates.
 This data must also be standardized.
@@ -253,7 +290,7 @@ Instead, please send your AST data to the curators for us to standardize using o
 If possible, send the data to the curators in its *most unprocessed form* (e.g., if your data is produced by a Sensititre, please send us its output, rather then importing it into Excel and modifying it).
 
 
-# Submission to the NCBI
+## Submission to the NCBI
 
 It is expected that all researchers will eventually submit their metadata to the NCBI's databases as they publish their work.
 For the GRDI-AMR2 project, the metadata of submitted sequences will be formatted according to the [NCBI's One Health Enterics metadata package](https://github.com/CFSAN-Biostatistics/One_Health_Enteric_Package)
@@ -267,7 +304,7 @@ Next, request access to the Submission Group for the GRDI-AMR2 project (email Ga
 Submitting your data through this group will enable the curators to see and modify your submission, which will help with uploading the correct metadata and facilitate downstream updates to the VMR.
 
 
-## Creating a BioProject
+### Creating a BioProject
 
 First, you must create a BioProject under which your samples will live.
 
@@ -297,7 +334,7 @@ First, you must create a BioProject under which your samples will live.
 7. **Review and submit**: We recommend contacting the curators before hitting submit for us to review. 
      If you have submitted under the Submission Group, we will be able to check and submit the BioProject without requiring any more input.
 
-## Create BioSamples.
+### Create BioSamples
 
 Create BioSample for each isolate or sample that has sequencing data associated with it.
 
@@ -310,7 +347,7 @@ Create BioSample for each isolate or sample that has sequencing data associated 
       We will be able to see your submission and can add in both the "One Health Enterics" formatted metadata and the Antibiograms (if applicable and submitted to the VMR) to your submission for you.
       You'll just need to let us know which samples to add (i.e., all of the samples/isolates or are you choosing to upload a subset?).
 
-## Upload Sequences. 
+### Upload Sequences
 
 With your BioSamples updated, it is now possible to upload your sequences to the NCBI.
 Here, you will want to create an SRA submission.
