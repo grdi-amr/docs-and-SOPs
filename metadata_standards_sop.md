@@ -267,14 +267,14 @@ Contact Emil Jurga OR the [NML's Science IT Helpdesk](mailto:helpdesk@nml-lmn.ph
       Create one IRIDA sample for every sample or isolate that has sequence data associated with it.
     - For whole genome sequences, the irida sample name should be the "isolate_ID".
     - For metagenomic sequences, the irida sample name should be the "sample_collector_sample_ID".
-    - For sequences derived from "pooled samples", see "Pooled Sequences" Section.
+    - For sequences derived from "pooled samples", use whatever ID uniquel identifies the pooled sample.
     - There is no need to add metadata to the IRIDA samples (the metadata will be stored in the VMR which will link to IRIDA)
 7. Upload sequences
 
 For creating samples and uploading sequences, there are two options:
 
 1. For a few samples and sequences, you might opt to use IRIDA's web interface (see instructions [here](https://phac-nml.github.io/irida-documentation/user/tutorials/web-upload/))
-2. For multiple samples, you might instead want to use the IRIDA uploaded tool (see instructions [here](https://github.com/phac-nml/irida-uploader-tutorial))
+2. For multiple samples, you might instead want to use the IRIDA uploader tool (see instructions [here](https://github.com/phac-nml/irida-uploader-tutorial))
 
 ## Pooled samples for metagenomics
 
@@ -289,14 +289,13 @@ For example, with the stone-fruit data:
 | CFIA-AMR-2022-0007, CFIA-AMR-2022-0008, CFIA-AMR-2022-0009 | CFIAMT20230001 | Canadian Food Inspection Agency (CFIA) [GENEPIO:0100552] | Illumina [GENEPIO:0001923] | Illumina HiSeq [GENEPIO:0100110] |
 | CFIA-AMR-2022-0010, CFIA-AMR-2022-0011, CFIA-AMR-2022-0012 | CFIAMR20230002 | Canadian Food Inspection Agency (CFIA) [GENEPIO:0100552] | Illumina [GENEPIO:0001923] | Illumina HiSeq [GENEPIO:0100110] |
 
-
 ## Antimicrobial Susceptibility Testing
 
 Many researchers may be producing Antimicrobial Susceptibility Testing (AST) data from isolates.
 This data must also be standardized.
 However, the current implementation of AST data in both the DataHarmonizer and the Excel Template is wide-form: It is spread over 600 columns!
 This is not feasible to fill by hand for anything more then a handful of samples.
-For this reason **it is out recommendation that researchers do not standardize their AST data by hand**.
+For this reason it is out recommendation that researchers *do not* standardize their AST data by hand.
 Instead, please send your AST data to the curators for us to standardize using our scripts.
 If possible, send the data to the curators in its *most unprocessed form* (e.g., if your data is produced by a Sensititre, please send us its output, rather then importing it into Excel and modifying it).
 
@@ -306,12 +305,11 @@ If possible, send the data to the curators in its *most unprocessed form* (e.g.,
 It is expected that all researchers will eventually submit their metadata to the NCBI's databases as they publish their work.
 For the GRDI-AMR2 project, the metadata of submitted sequences will be formatted according to the [NCBI's One Health Enterics metadata package](https://github.com/CFSAN-Biostatistics/One_Health_Enteric_Package)
 This data standard is similar, but not identical, to the GRDI-AMR One Health Data Standard.
-Fortunately, if you have submitted data to the curators (and it has been inserted into the VMR database), the curators can convert your metadata into the One Health Enterics
-A conversion function is already built into the VMR that can cover both isolates and metagenomic samples, and so your metadata can easily be converted into the NCBI's One Health Enterics package.
+Fortunately, if you have submitted data to the curators (and it has been inserted into the VMR database), the curators can easily convert your metadata into the One Health Enterics format for you.
 
 Uploading to the SRA is best done alongside the curators, as they can help with some of the tedious aspects of uploading sequences to the NCBI.
 To upload your sequences to the NCBI, you will first need to create or access your NCBI account.
-Next, request access to the Submission Group for the GRDI-AMR2 project (email Gabriel Wajnberg to request access).
+Next, request access to the Submission Group for the GRDI-AMR2 project (email [Gabriel Wajnberg](mailto:gabriel.wajnberg@inspection.gc.ca))
 Submitting your data through this group will enable the curators to see and modify your submission, which will help with uploading the correct metadata and facilitate downstream updates to the VMR.
 
 
