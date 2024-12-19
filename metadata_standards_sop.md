@@ -6,37 +6,11 @@ Written by Emil Jurga and Gabriel Wajnberg
 
 ## Introduction
 
-All data collected by researchers participating in the GRDI-AMR2 project is expected to be formatted according to the GRDI-AMR2 One Health standard and collected in a central database (the VMR).
+All data collected by researchers participating in the GRDI-AMR2 project must be formatted according to the GRDI-AMR2 One Health standard and submitted to a central database (the VMR).
 This is to ensure long-term accessibility of the data and facilitate analyses across labs and departments.
 Since metadata associated with each project is likely to look very different from the standard, some work must be done to format or _harmonize_ the data to the standard.
-This SOP outlines the workflow for handling sample and isolate data, sequence submission, metadata curation.
+This SOP outlines the workflow for handling sample and isolate data metadata curation.
 It will also outline the process for submitting data to the database, as well as to the NCBI and IRIDA.
-
-For this SOP, we will be using some example data to guide through the submission process.
-This data was collected by Work Package 4.2, and consists of samples from imported foods.
-These samples are pooled and sequenced to identify potential isolates of interest, and if any are found, the samples are further processed to isolate bacteria for downstream analysis.
- subset of these data:
-
-| sample ID          | import country           | collection date             | food product            | Processing | Quality Date              |
-| --                 | --                       | --                          | --                      | --         | --                        |
-| CFIA-AMR-2022-0001 | United States of America | Wednesday, August 10, 2022  | Frozen Peaches          | Sliced     | 6/22/2024                 |
-| CFIA-AMR-2022-0002 | Peru                     | Wednesday, August 10, 2022  | Frozen Mango            | Chunks     | 6/16/2024                 |
-| CFIA-AMR-2022-0003 | Peru                     | Wednesday, August 10, 2022  | Frozen Avocado          | Chunks     | 12/16/2023                |
-| CFIA-AMR-2022-0004 | Viet Nam                 | Thursday, December 8, 2022  | Frozen coconut-chunks   | Chunks     | 10/17/2024                |
-| CFIA-AMR-2022-0005 | Viet Nam                 | Tuesday, November 29, 2022  | Frozen Mango            | Sliced     | 1/10/2024                 |
-| CFIA-AMR-2022-0006 | Greece                   | Thursday, December 8, 2022  | Frozen Peaches          | Sliced     | 8/30/2024                 |
-| CFIA-AMR-2022-0007 | United States of America | Thursday, December 8, 2022  | Frozen Peaches          | Sliced     | 11/8/2024                 |
-| CFIA-AMR-2022-0008 | United States of America | Thursday, December 8, 2022  | Frozen Peaches          | Sliced     | 10/11/2024                |
-| CFIA-AMR-2022-0009 | United States of America | Thursday, December 8, 2022  | Frozen Peaches          | Sliced     | 11/21/2024                |
-| CFIA-AMR-2022-0010 | Philippines              | Wednesday, January 11, 2023 | Frozen coconut-shredded | Shredded   | Missing [GENEPIO:0001618] |
-| CFIA-AMR-2022-0011 | Philippines              | Wednesday, January 11, 2023 | Frozen coconut-shredded | Shredded   | Missing [GENEPIO:0001618] |
-| CFIA-AMR-2022-0012 | India                    | Monday, March 20, 2023      | Frozen coconut-shredded | Shredded   | 6/12/2024                 |
-| CFIA-AMR-2022-0013 | India                    | Monday, March 20, 2023      | Frozen coconut-chunks   | Sliced     | 6/8/2024                  |
-| CFIA-AMR-2022-0014 | India                    | Monday, March 20, 2023      | Frozen coconut-shredded | Grated     | 7/15/2024                 |
-| CFIA-AMR-2022-0015 | India                    | Monday, March 20, 2023      | Frozen coconut-shredded | Shredded   | 7/4/2024                  |
-| ...                | ...                      | ...                         | ...                     | ...        | ...                       |
-| CFIA-AMR-2022-0163 | India [GAZ:00002839]     | Monday, March 20, 2023      | Frozen coconut-shredded | Shredded   | 11/27/2024                |
-
 
 ## Terms
 
@@ -151,6 +125,33 @@ Whatever the structure of your data, submission to WP6 is best undertaken in par
     - [ ] Use IRIDA uploader to upload sequences to NCBI (if few sequences) _OR_ **Contact curators to upload sequences to SRA**
 
 ## Sample and collection information
+
+### Example Data
+
+For this SOP, we will be using some example data to guide through the submission process.
+This data was collected by Work Package 4.2, and consists of samples from imported foods.
+These samples are pooled and sequenced to identify potential isolates of interest, and if any are found, the samples are further processed to isolate bacteria for downstream analysis.
+Here is a subset of these data:
+
+| sample ID          | import country           | collection date             | food product            | Processing | Quality Date              |
+| --                 | --                       | --                          | --                      | --         | --                        |
+| CFIA-AMR-2022-0001 | United States of America | Wednesday, August 10, 2022  | Frozen Peaches          | Sliced     | 6/22/2024                 |
+| CFIA-AMR-2022-0002 | Peru                     | Wednesday, August 10, 2022  | Frozen Mango            | Chunks     | 6/16/2024                 |
+| CFIA-AMR-2022-0003 | Peru                     | Wednesday, August 10, 2022  | Frozen Avocado          | Chunks     | 12/16/2023                |
+| CFIA-AMR-2022-0004 | Viet Nam                 | Thursday, December 8, 2022  | Frozen coconut-chunks   | Chunks     | 10/17/2024                |
+| CFIA-AMR-2022-0005 | Viet Nam                 | Tuesday, November 29, 2022  | Frozen Mango            | Sliced     | 1/10/2024                 |
+| CFIA-AMR-2022-0006 | Greece                   | Thursday, December 8, 2022  | Frozen Peaches          | Sliced     | 8/30/2024                 |
+| CFIA-AMR-2022-0007 | United States of America | Thursday, December 8, 2022  | Frozen Peaches          | Sliced     | 11/8/2024                 |
+| CFIA-AMR-2022-0008 | United States of America | Thursday, December 8, 2022  | Frozen Peaches          | Sliced     | 10/11/2024                |
+| CFIA-AMR-2022-0009 | United States of America | Thursday, December 8, 2022  | Frozen Peaches          | Sliced     | 11/21/2024                |
+| CFIA-AMR-2022-0010 | Philippines              | Wednesday, January 11, 2023 | Frozen coconut-shredded | Shredded   | Missing [GENEPIO:0001618] |
+| CFIA-AMR-2022-0011 | Philippines              | Wednesday, January 11, 2023 | Frozen coconut-shredded | Shredded   | Missing [GENEPIO:0001618] |
+| CFIA-AMR-2022-0012 | India                    | Monday, March 20, 2023      | Frozen coconut-shredded | Shredded   | 6/12/2024                 |
+| CFIA-AMR-2022-0013 | India                    | Monday, March 20, 2023      | Frozen coconut-chunks   | Sliced     | 6/8/2024                  |
+| CFIA-AMR-2022-0014 | India                    | Monday, March 20, 2023      | Frozen coconut-shredded | Grated     | 7/15/2024                 |
+| CFIA-AMR-2022-0015 | India                    | Monday, March 20, 2023      | Frozen coconut-shredded | Shredded   | 7/4/2024                  |
+| ...                | ...                      | ...                         | ...                     | ...        | ...                       |
+| CFIA-AMR-2022-0163 | India [GAZ:00002839]     | Monday, March 20, 2023      | Frozen coconut-shredded | Shredded   | 11/27/2024                |
 
 ### A note on sample names
 
