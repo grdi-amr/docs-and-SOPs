@@ -15,7 +15,7 @@ It will also outline the process for submitting data to the database, as well as
 For this SOP, we will be using some example data to guide through the submission process.
 This data was collected by Work Package 4.2, and consists of samples from imported foods.
 These samples are pooled and sequenced to identify potential isolates of interest, and if any are found, the samples are further processed to isolate bacteria for downstream analysis.
-A subset of these data:
+ subset of these data:
 
 | sample ID          | import country           | collection date             | food product            | Processing | Quality Date              |
 | --                 | --                       | --                          | --                      | --         | --                        |
@@ -48,7 +48,8 @@ A subset of these data:
     Access will be required to upload and access sequences on IRIDA, and view dashboards connected to the VMR.
     While most researchers _should_ already their own science network account, it may need to be renewed.
     Please contact [Emil Jurga](mailto:emil.jurga@phac-aspc.gc.ca) or the [NML's Science IT Helpdesk](mailto:helpdesk@nml-lmn.phac-aspc.gc.ca) to either renew or request an account.
-    The VPN address is [remote.corefacility.ca](http://remote.corefacility.ca).
+    The VPN address is [remote.corefacility.ca](http://remote.corefacility.ca) (using cisco AnyConnect)
+    or [virtual.cscscience.ca/vpn/index.html](https://virtual.cscscience.ca/vpn/index.html) for the web-interface (using Citrix)
 - **IRIDA:** Integrated Rapid Infectious Disease Analysis tool.
     This application hosts sequencing data.
     When connected to the Science Network VPN, the link is [ngs-archive.corefacility.ca](http://ngs-archive.corefacility.ca).
@@ -253,10 +254,10 @@ Therefore, you will need to be able to access IRIDA to upload your sequence file
 Note that you will need to activate an account to access the NML's IRIDA instance -- This account is _separate_ to the Science Account you use to access the VPN.
 Contact Emil Jurga OR the [NML's Science IT Helpdesk](mailto:helpdesk@nml-lmn.phac-aspc.gc.ca) to create an account.
 
-1. Log into the [NML's Science Network VPN](TODO)
+1. Log into the NML's Science Network VPN
 2. Log into [IRIDA](http://ngs-archive.corefacility.ca).
 4. Create a new project for your data.
-5. Add Emil Jurga (irida user: `ejurga`) and Gabriel Wajnberg (irida user: `TODO`) as members to the project, with the "collaborator" role.
+5. Add Emil Jurga (irida user: `ejurga`) and Gabriel Wajnberg (irida user: `gwajnberg`) as members to the project, with the "collaborator" role.
 6. Create IRIDA samples
     - **Note:** IRIDA samples are _not_ sequences.
       Create one IRIDA sample for every sample or isolate that has sequence data associated with it.
