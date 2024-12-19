@@ -14,7 +14,7 @@ It will also outline the process for submitting data to the database, as well as
 
 ## Terms
 
-- **The GRDI-AMR One Health data standard:** The set of fields, terms, and rules that represent how data should be formatted.
+- **The GRDI-AMR One Health data standard:** The set of fields, terms, and rules that represent how data should be formatted ([hosted on github](https://github.com/cidgoh/GRDI_AMR_One_Health))
 - **The Virtual Microbial Resource (VMR):** The central database that is storing the metadata.
     This database ensures the integrity of the metadata and provides additional functionality, such as exporting to other formats.
 - **The Science Network:** The National Microbiology Laboratory branch of PHAC has its own suite of servers and IT infrastructure to host and support science projects withing the branch.
@@ -37,7 +37,7 @@ It will also outline the process for submitting data to the database, as well as
 
 ## Tools
 
-Each lab is likely to have their own methods for collecting and storing metadata, from Excel workbooks, to SQL or Microsoft Access or SQL databases, or even plain text files (e.g., CSV or TSV formats).
+Each lab is likely to have their own methods for collecting and storing metadata, from Excel workbooks, to SQL or Microsoft Access databases, or even plain text files (e.g., CSV or TSV formats).
 Possibly, different formats are used for different types of data.
 At this point, two different tools have been made accessible to help researchers format their data according to the GRDI-AMR OneHealth data standard:
 
@@ -90,7 +90,7 @@ In addition, some bacterial isolates might be sent off for antimicrobial suscept
 Throughout, it is possible that many isolates might be taken from a single sample, or perhaps none at all.
 Similarly, an isolate might be sequenced multiple times.
 Some projects have opted not to isolate any bacteria from their samples at all, opting instead for a pure metagenomics approach.
-Whatever the structure of your data, submission to WP6 is best undertaken in parallel series of steps, with checkpoints with the data curators along the way to catch errors quickly and assess/add new terms or fields as needed.
+Whatever the structure of your data, submission to WP6 is best undertaken in a series of steps, with checkpoints with the data curators along the way to catch errors quickly and assess/add new terms or fields as needed.
 
 
 ## Checklist
@@ -112,7 +112,7 @@ Whatever the structure of your data, submission to WP6 is best undertaken in par
     - [ ] Give **curators** collaborator permission on the IRIDA project
     - [ ] Create IRIDA samples
     - [ ] Upload sequences to IRIDA
-    - [ ] **Contact the curators so they can update your data with IRIDA related information**
+    - [ ] **Contact the curators so they can update your data in the VMR with IRIDA related information**
 4. AST Data:
     - [ ] **Correspond with curators about the nature of your AST data**
     - [ ] Send curators AST data
@@ -174,8 +174,11 @@ Including this information will make your data more useful for future analyses, 
 The first step in the data harmonization is to identify any fields that you might reasonably be able apply to your samples.
 Look through the fields and their descriptions to see if any apply.
 Taking a look at the allowed terms might help with deciding if a field could applies.
-The GitHub repo of the standard contains both field descriptions, possible terms, and SOPs for filling out fields; this documentation can be found at these links. TODO: add links
-If you are unsure which of your metadata values correspond to which term, then you might want to use the [Ontological Lookup Service](https://www.ebi.ac.uk/ols4) to lookup the ontology term ID
+The [GitHub repo of the standard]((https://github.com/cidgoh/GRDI_AMR_One_Health)) contains both field descriptions, possible terms, and SOPs for filling out fields.
+A useful SOP to follow alongside this one is the [Metadata Curation SOP](https://github.com/cidgoh/GRDI_AMR_One_Health/blob/main/SOPs/GRDI_Metadata-Curation-SOP-13.4.pdf),
+which provides guidance on each field and the terms used for curation.
+
+If you are unsure what a term means, then you might want to use the [Ontological Lookup Service](https://www.ebi.ac.uk/ols4) to lookup the ontology term ID
 (e.g., for "coconut meat (frozen)", the ontology ID is *FOODON_00003857*) and get its description.
 This is also a good stage to ask the curators for help.
 In some cases, there might not be a standard term that fits one of your metadata values -- Send an email to the curators and they can add the term for you.
