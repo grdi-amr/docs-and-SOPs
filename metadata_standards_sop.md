@@ -160,7 +160,9 @@ This should be designated as the "sample_collector_sample_id" field in the stand
 For the purposes of the GRDI-AMR2 Project, we expect sample IDs to be *unique across the entire project*.
 Therefore, sample IDs that are too short or generic are not acceptable (for example, sample names consisting only of a short string of alphanumerics).
 In addition, please refrain from populating a sample ID with metadata (e.g., canada-coconut-01A) - this can lead to confusion, particularly if downstream metadata is updated.
-Please note that *if you do change* your sample IDs, please put the original ID in the alternative_sample_IDS column, in case you or another researcher needs to refer to them again.
+Refrain particularly from populating your sample names with sensitive patient identifiers.
+Please note that *if you do change* your sample IDs, please put the original ID in the alternative_sample_IDS column, in case you or another researcher needs to refer to them again 
+(except in the case of the alternative ID containing sensitive information!)
 
 ### Identifying sample groups
 
