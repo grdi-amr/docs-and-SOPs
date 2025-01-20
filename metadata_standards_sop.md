@@ -1,4 +1,4 @@
-# An SOP for the standardizing and submission of GRDI-AMR2 metadata and sequence data
+# An SOP for the standardization and submission of GRDI-AMR2 metadata and sequence data
 
 Version 1.0
 
@@ -9,18 +9,18 @@ Written by Emil Jurga and Gabriel Wajnberg
 All data collected by researchers participating in the GRDI-AMR2 project must be formatted according to the GRDI-AMR2 One Health standard and submitted to a central database (the VMR).
 This is to ensure long-term accessibility of the data and facilitate analyses across labs and departments.
 Since metadata associated with each project is likely to look very different from the standard, some work must be done to format or _harmonize_ the data to the standard.
-This SOP outlines the workflow for handling sample and isolate data metadata curation.
-It will also outline the process for submitting data to the database, as well as to the NCBI and IRIDA.
+This SOP outlines the workflow for handling sample and isolate data and metadata curation.
+It also outlines the process for submitting data to the database, as well as to the NCBI and IRIDA.
 
 ## Terms
 
 - **The GRDI-AMR One Health data standard:** The set of fields, terms, and rules that represent how data should be formatted ([hosted on github](https://github.com/cidgoh/GRDI_AMR_One_Health))
-- **The Virtual Microbial Resource (VMR):** The central database that is storing the metadata.
+- **The Virtual Microbial Resource (VMR):** The central database that stores the metadata.
     This database ensures the integrity of the metadata and provides additional functionality, such as exporting to other formats.
-- **The Science Network:** The National Microbiology Laboratory branch of PHAC has its own suite of servers and IT infrastructure to host and support science projects withing the branch.
+- **The Science Network:** The National Microbiology Laboratory branch of PHAC has its own suite of servers and IT infrastructure to host and support science projects within the branch.
     Access to this network has been extended to all members of the GRDI-AMR2 to support the project.
-    Access will be required to upload and access sequences on IRIDA, and view dashboards connected to the VMR.
-    While most researchers _should_ already their own science network account, it may need to be renewed.
+    Access is required to upload and access sequences on IRIDA, and view dashboards connected to the VMR.
+    While most researchers _should_ already have their own science network account, it may need to be renewed.
     Please contact [Emil Jurga](mailto:emil.jurga@phac-aspc.gc.ca) or the [NML's Science IT Helpdesk](mailto:helpdesk@nml-lmn.phac-aspc.gc.ca) to either renew or request an account.
     The VPN address is [remote.corefacility.ca](http://remote.corefacility.ca) (using cisco AnyConnect)
     or [virtual.cscscience.ca/vpn/index.html](https://virtual.cscscience.ca/vpn/index.html) for the web-interface (using Citrix)
@@ -28,8 +28,8 @@ It will also outline the process for submitting data to the database, as well as
     This application hosts sequencing data.
     When connected to the Science Network VPN, the link is [ngs-archive.corefacility.ca](http://ngs-archive.corefacility.ca).
 - **The GCExchange:** The website/repository that is being used to share documents, data, and SOPs ([link](https://gcxgce.sharepoint.com/teams/100001292)).
-- **The curators:** These are the people responsible for managing the GRDI-AMR One Health data standard, inputting data into the VMR, double-checking that data has been properly standardized,
-    and to help with any other data-related issues.
+- **The curators:** The people responsible for managing the GRDI-AMR One Health data standard, inputting data into the VMR, double-checking that data has been properly standardized,
+    and helping with any other data-related issues.
     They are:
     - [Emma Griffiths](mailto:emma_griffiths@sfu.ca) (SFU). For high-level questions about the data standard, and initial curation check-pointing of sample groups.
     - [Gabriel Wajnberg](mailto:gabriel.wajnberg@inspection.gc.ca) (CFIA). For data submission, data export, NCBI submissions, and data standard new term or field requests.
@@ -128,7 +128,7 @@ Whatever the structure of your data, submission to WP6 is best undertaken in a s
 
 ### Example Data
 
-For this SOP, we will be using some example data to guide through the submission process.
+For this SOP, we will be using some example data to guide us through the submission process.
 This data was collected by Work Package 4.2, and consists of samples from imported foods.
 These samples are pooled and sequenced to identify potential isolates of interest, and if any are found, the samples are further processed to isolate bacteria for downstream analysis.
 Here is a subset of these data:
@@ -236,7 +236,7 @@ These samples can still provide valuable information for risk-management and doc
 ## Isolate metadata
 
 As with sample names, isolate IDs must be unique across the entire project.
-If you need to rename your isolate IDS, please put their original names under the "alternative_isolate_IDs" column.
+If you need to rename your isolate IDs, please put their original names under the "alternative_isolate_IDs" column.
 
 As with samples, please provide the metadata for all isolates that your research project has detected (even if they will not go on to be sequenced or otherwise analysed!).
 
@@ -347,7 +347,7 @@ First, you must create a BioProject under which your samples will live.
 
 ### Create BioSamples
 
-Create BioSample for each isolate or sample that has sequencing data associated with it.
+Create a BioSample for each isolate or sample that has sequencing data associated with it.
 
 1. **Submitter:** Add your information, and as with the BioProject submission, add the GRDI-AMR2 submission group.
 2. **General Info:** Here, make sure that "Batch/Multiple BioSamples" is selected.
@@ -362,7 +362,7 @@ Create BioSample for each isolate or sample that has sequencing data associated 
 
 With your BioSamples updated, it is now possible to upload your sequences to the NCBI.
 Here, you will want to create an SRA submission.
-Getting your sequences from IRIDA onto the NCBI's servers might prove a little challenging - while IRIDA does functionality to [export to NCBI](https://phac-nml.github.io/irida-documentation/user/tutorials/export-to-ncbi/),
+Getting your sequences from IRIDA onto the NCBI's servers might prove a little challenging - while IRIDA does have functionality to [export to NCBI](https://phac-nml.github.io/irida-documentation/user/tutorials/export-to-ncbi/),
 this might be too arduous to attempt for anything other then a handful of samples.
 Therefore, we currently recommend that you contact the curators when you are ready to upload sequences to the NCBI, and we can employ our workflows to upload the sequences in batch.
 
