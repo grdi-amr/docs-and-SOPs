@@ -1,6 +1,6 @@
 # An SOP for the standardization and submission of GRDI-AMR2 metadata and sequence data
 
-Version 1.0
+Version 1.1
 
 Written by Emil Jurga and Gabriel Wajnberg
 
@@ -124,6 +124,16 @@ Whatever the structure of your data, submission to WP6 is best undertaken in a s
     - [ ] Create SRA submission
     - [ ] Use IRIDA uploader to upload sequences to NCBI (if few sequences) _OR_ **Contact curators to upload sequences to SRA**
 
+## Project name and Sample Plan
+
+First, define _at least_ a project name under which your samples/isolates will be assigned.
+A project name should be concise but descriptive enough to easily identify where the samples/isolates came from.
+
+A sample plan **is not** another identifier for a project.
+Instead, it should refer to documentation or an SOP that defines the methods and procedures used to collect samples and isolates.
+For example, a sampling plan might define which hospitals isolates are sampled from, and the methods to be used to culture organisms.
+Not all projects will have a sampling plan, but if it does, it is *immensely useful* to link to your samples and isolates.
+
 ## Sample and collection information
 
 ### Example Data
@@ -157,12 +167,29 @@ Here is a subset of these data:
 
 You likely have assigned a sample ID of some kind to your data.
 This should be designated as the "sample_collector_sample_id" field in the standard.
-For the purposes of the GRDI-AMR2 Project, we expect sample IDs to be *unique across the entire project*.
+For the purposes of the GRDI-AMR2 Project, we expect sample IDs to be **unique across the entire project**.
 Therefore, sample IDs that are too short or generic are not acceptable (for example, sample names consisting only of a short string of alphanumerics).
-In addition, please refrain from populating a sample ID with metadata (e.g., canada-coconut-01A) - this can lead to confusion, particularly if downstream metadata is updated.
+In addition, it is considered best practice to refrain from populating a sample ID with metadata (e.g., canada-coconut-01A) -
+this can lead to confusion, particularly if downstream metadata is updated.
 Refrain particularly from populating your sample names with sensitive patient identifiers.
 Please note that *if you do change* your sample IDs, please put the original ID in the alternative_sample_IDS column, in case you or another researcher needs to refer to them again 
-(except in the case of the alternative ID containing sensitive information!)
+(except in the case of the alternative ID containing sensitive information!).
+
+We *recommend* (but will *not* enforce) that sample names follow the following format:
+The abbreviated name of the Agency (e.g., PHAC, CFIA), followed by an abbreviation of the lab name/principle investigator (e.g., CC for "Cathy Carrillo"),
+followed _possibly_ by the year if applicable,
+followed by an alphanumeric identifier (So in full, e.g., CFIA-CC-2024-ABC123).
+We also recommend that **one of** either hyphens ("-") or underscores ("\_") be used as separators in sample names
+(i.e., use a consistent separator: CFIA-CC-ABC123 instead of CFIA_CC-ABC123)
+
+Finally, special characters (e.g., !,@,#,/,",',) and spaces *are not allowed* in **any identifier** of the GRDI spec (with the exception of alternative IDs, if necessary).
+
+### Which samples do I include?
+
+In short, all of them.
+Or at least, the ones that you have metadata for.
+This includes samples that were collected, but resulted in no useful downstream data (e.g., no isolates are extracted, or no sequences are collected).
+These samples can still provide valuable information for risk-management and documentation.
 
 ### Identifying sample groups
 
@@ -226,17 +253,11 @@ In the stone fruit data, a variable field is the country of origin.
 First, determine how many unique values there are -- in the stone fruit data, there are 12 (e.g., USA, Peru, India).
 For each value, choose its corresponding ontology term from the possible list of values, and execute a find-and-replace (e.g., USA -> United States of America [GAZ:00002459], Peru -> Peru [GAZ:00002932]).
 
-### Which samples do I include?
-
-In short, all of them.
-Or at least, the ones that you have metadata for.
-This includes samples that were collected, but resulted in no useful downstream data (e.g., no isolates are extracted, or no sequences are collected).
-These samples can still provide valuable information for risk-management and documentation.
-
 ## Isolate metadata
 
-As with sample names, isolate IDs must be unique across the entire project.
-If you need to rename your isolate IDs, please put their original names under the "alternative_isolate_IDs" column.
+As with sample names, isolate IDs must be unique **across the entire project**.
+In general, try following the same principles as Sample IDs (although for isolates you may also want to include an abbreviation of the organism in the name, e.g., EC for *E. coli*).
+If you need to rename your isolate IDS, please put their original names under the "alternative_isolate_IDs" column.
 
 As with samples, please provide the metadata for all isolates that your research project has detected (even if they will not go on to be sequenced or otherwise analysed!).
 
