@@ -208,12 +208,12 @@ Refer to this
 ```mermaid
 graph TD
 
-time_fields@{shape: procs, label: "`sample_collection_date
-                                    sample_collection_date_precision`"}
-who_fields@{shape: procs, label: "`**agency**: sample_collected_by
-                                   **lab**: sample_collected_by_laboratory_name
-                                   **name**: sample_collector_contact_name
-                                   **email**: sample_collector_contact_email`"}
+time_fields@{shape: procs, label: "sample_collection_date
+                                   sample_collection_date_precision"}
+who_fields@{shape: procs, label: "**agency**: sample_collected_by
+                                  **lab**: sample_collected_by_laboratory_name
+                                  **name**: sample_collector_contact_name
+                                  **email**: sample_collector_contact_email"}
 
 sam("Sample") --> |"`**When** was it collected?`"| time_fields
 sam("Sample") --> |"`**Who** collected it?`"     | who_fileds
