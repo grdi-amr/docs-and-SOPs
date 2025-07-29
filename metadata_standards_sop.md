@@ -206,6 +206,10 @@ There are fields reserved for food samples, fields for environmental samples, an
 Refer to this
 
 ```mermaid
+---
+config:
+    markdownAutoWrap: false
+---
 graph TD
 
 time_fields@{shape: procs, label: "sample_collection_date
