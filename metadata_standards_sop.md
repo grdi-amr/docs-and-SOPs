@@ -208,8 +208,8 @@ Refer to this
 ```mermaid
 graph TD
 
-time_fields@{shape: procs, label: "``sample_collection_date``
-                                    `sample_collection_date_precision``"}
+time_fields@{shape: procs, label: "`sample_collection_date
+                                    sample_collection_date_precision"}
 
 sam("Sample") --> |"`**When** was it collected?`"| time_fields
 
