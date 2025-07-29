@@ -17,13 +17,9 @@ It also outlines the process for submitting data to the database, as well as to 
 - **The GRDI-AMR One Health data standard:** The set of fields, terms, and rules that represent how data should be formatted ([hosted on github](https://github.com/cidgoh/GRDI_AMR_One_Health))
 - **The Virtual Microbial Resource (VMR):** The central database that stores the metadata.
     This database ensures the integrity of the metadata and provides additional functionality, such as exporting to other formats.
-- **The Science Network:** The National Microbiology Laboratory branch of PHAC has its own suite of servers and IT infrastructure to host and support science projects within the branch.
-    Access to this network has been extended to all members of the GRDI-AMR2 to support the project.
-    Access is required to upload and access sequences on IRIDA, and view dashboards connected to the VMR.
-    While most researchers _should_ already have their own science network account, it may need to be renewed.
-    Please contact [Emil Jurga](mailto:emil.jurga@phac-aspc.gc.ca) or the [NML's Science IT Helpdesk](mailto:helpdesk@nml-lmn.phac-aspc.gc.ca) to either renew or request an account.
-    The VPN address is [remote.corefacility.ca](http://remote.corefacility.ca) (using cisco AnyConnect)
-    or [virtual.cscscience.ca/vpn/index.html](https://virtual.cscscience.ca/vpn/index.html) for the web-interface (using Citrix)
+- **The Science Network:** The suite of servers and IT infrastructure to host and support science projects hosted by the National Microbiology Laboratory Branch of PHAC.
+- **Science Credentials:** The username and password used to access the science network. 
+    When logging in via Microsoft Windows portals, your username will be of the format _username_@**CSCScience.ca**
 - **IRIDA:** Integrated Rapid Infectious Disease Analysis tool.
     This application hosts sequencing data.
     When connected to the Science Network VPN, the link is [ngs-archive.corefacility.ca](http://ngs-archive.corefacility.ca).
@@ -34,6 +30,17 @@ It also outlines the process for submitting data to the database, as well as to 
     - [Emma Griffiths](mailto:emma_griffiths@sfu.ca) (SFU). For high-level questions about the data standard, and initial curation check-pointing of sample groups.
     - [Gabriel Wajnberg](mailto:gabriel.wajnberg@inspection.gc.ca) (CFIA). For data submission, data export, NCBI submissions, and data standard new term or field requests.
     - [Emil Jurga](mailto:emil.jurga@phac-aspc.gc.ca) (PHAC). Same as Gabriel Wajnberg, but additionally for questions regarding IRIDA and the Science Network.
+
+## Connecting to the Science Network
+
+Access to the NMLB's science network network has been extended to all members of the GRDI-AMR2 to support the project.
+Access is required to upload and access sequences on IRIDA, and view dashboards connected to the VMR.
+While most researchers _should_ already have their own science network account, it may need to be renewed.
+Please contact [Emil Jurga](mailto:emil.jurga@phac-aspc.gc.ca) or the [NML's Science IT Helpdesk](mailto:helpdesk@nml-lmn.phac-aspc.gc.ca) to either renew or request an account.
+The VPN address is [remote.corefacility.ca](http://remote.corefacility.ca) (using cisco AnyConnect).
+However, most users should connect to the science network via [NMLconnect](https://connect.nml-lmn.phac-aspc.gc.ca/), which enables access through the corporate VPN.
+Log in to this portal using your **science credentials** (_username_@**CSCScience.ca**). 
+The chrome application has many bookmarks pre-configured to access most of what you'll need, including IRIDA.
 
 ## Tools
 
@@ -48,7 +55,8 @@ At this point, two different tools have been made accessible to help researchers
     Installation of the tool is relatively simple (instructions at the link).
     Note that the default data template is **not** the GRDI-AMR2 data standard, make sure to select the GRDI template before proceeding.
 
-2.  The Excel Workbook ([GitHub repository link](https://github.com/cidgoh/GRDI_AMR_One_Health)).
+2.  The Excel Workbook ([GitHub repository link](https://github.com/cidgoh/GRDI_AMR_One_Health)). 
+    Note however that this is excel sheet **is being retired**, as it is too difficult to maintain alongside the DataHarmonizer.
     This is an Excel Workbook with the fields and controlled vocabulary implemented.
     Different metadata categories are split across different tabs in the workbook.
     Excel macros are used to combine the sheets at the end, but this functionality is not required to insert the data into the VMR.
@@ -190,6 +198,20 @@ In short, all of them.
 Or at least, the ones that you have metadata for.
 This includes samples that were collected, but resulted in no useful downstream data (e.g., no isolates are extracted, or no sequences are collected).
 These samples can still provide valuable information for risk-management and documentation.
+
+### Sample types and recommended fields
+
+Not every field in the GRDI One Health standard is applicable to every sample type.
+There are fields reserved for food samples, fields for environmental samples, and still also for samples taken from a host organism (e.g., anatomical samples).
+Refer to this
+
+```mermaid
+graph TD
+
+sam("Sample") --> |"`**When** was it collected`"| time("fields")
+
+```
+
 
 ### Identifying sample groups
 
