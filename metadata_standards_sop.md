@@ -208,22 +208,75 @@ Refer to this
 ```mermaid
 ---
 config:
+    htmlLabels: false
     markdownAutoWrap: false
     flowchart:
       wrappingWidth: 1000
       defaultRenderer: elk
 ---
-graph TD
+graph LR
 
-time_fields@{shape: procs, label: "sample_collection_date
-                                   sample_collection_date_precision"}
-who_fields@{shape: procs, label: "**agency**: sample_collected_by
-                                  **lab**: sample_collected_by_laboratory_name
-                                  **name**: sample_collector_contact_name
-                                  **email**: sample_collector_contact_email"}
+sam@{shape: circle,  label: "A Sample"}
+what@{shape: manual-input, label: "**What** is it?"}
+when@{shape: procs, label: "sample_collection_date
+                            sample_collection_date_precision"}
+who@{shape: procs, label: "**agency**: sample_collected_by
+                           **lab**: sample_collected_by_laboratory_name
+                           **name**: sample_collector_contact_name
+                           **email**: sample_collector_contact_email"}
+where@{shape: procs, label: "**country**: geo_loc_name (country) 
+                             **province**: geo_loc_name (state/province/region)
+                             **coords**: geo_loc latitude + longitude"}
+why@{shape: procs, label: "purpose_of_sampling 
+                           presampling_activity"}
+how@{shape: procs, label: "collection_device
+                           collection_method"}
 
-sam("Sample") --> |"`**When** was it collected?`"| time_fields
-sam("Sample") --> |"`**Who** collected it?`"     | who_fileds
+food@{shape: lean-r, label: "It's a **food product**"}
+env@{shape: lean-r, label: "It's an **environmental** sample"}
+ana@{shape: lean-r, label: "It's an **anatomical** sample"}
+
+foodImport@{shape: proc, label: "food_product_origin_geo_loc_name (country)"}
+foodSource@{shape: proc, label: "animal_source_of_food"}
+foodFields@{shape: procs, label: "food_product
+                                  food_product_properties 
+                                  label_claim
+                                  food_product_production_stream
+                                  food_quality_date
+                                  food_packaging_date"}
+envWhat@{shape: procs, label: "environmental_material 
+                               environmental_material_constituent"}
+popField@{shape: proc, label: "animal_or_plant_population"}
+envWhere@{shape: proc, label: "environmental_site"}
+anaFields@{shape: procs, label: "anatomical_material
+                                 body_product
+                                 anatomical_part
+                                 anatomical_region"}
+hostFields@{shape: procs, label: "host (common name)
+                                  host (scientific_name)
+                                  host (ecotype)
+                                  host (breed)
+                                  host (food production_name)"}
+hostOrigin@{shape: proc, label: "host_origin_geo_loc_name (country)"}
+
+sam --> what -->|"Is it meant to be eaten by humans?"| food -->|"Is it **imported?**"          | foodImport
+                                                       food -->|"**What** is it?"              | foodFields
+                                                       food -->|"Is it an **animal product?**" | foodSource --> a@{shape: dbl-circ, label: "**DO NOT 
+                                                                                                                                       FILL OUT 
+                                                                                                                                       HOST 
+                                                                                                                                       FIELDS**"}
+        what -->|"Was the sample taken from an **organism?**"| ana -->|"What **part?**"                                | anaFields
+                                                               ana -->|"What **organism?**"                            | hostFields
+                                                               ana -->|"Do you know **where** the organism was?"       | envWhere
+                                                               ana -->|"Did the organism come from **outside Canada**?"| hostOrigin
+        what -->|"Does it come from the **environment?**"    | env -->|"**What** is it?"                                 | envWhat
+                                                               env -->|"Are there many animals of a specific type here?" | popField
+                                                               env -->|"**Where** was it?"                               | envWhere
+sam  -->|"**When** was it collected?"  | when
+sam  -->|"**Who** collected it?"       | who
+sam  -->|"**Where** was it collected?" | where
+sam  -->|"**Why** was it collected?"   | why
+sam  -->|"**How** was it collected?"   | how
 
 ```
 
