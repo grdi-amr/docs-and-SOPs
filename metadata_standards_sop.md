@@ -276,6 +276,7 @@ In general, try following the same principles as Sample IDs (although for isolat
 If you need to rename your isolate IDS, please put their original names under the "alternative_isolate_IDs" column.
 
 As with samples, please provide the metadata for all isolates that your research project has detected (even if they will not go on to be sequenced or otherwise analysed!).
+
 The following may help understand which fields to fill out for your isolates:
 
 ![A flowchart detailing which fields to fill out for isolates](diagrams/isolate_field_guide.png)
@@ -290,6 +291,10 @@ After this has been cleared, you may proceed with sending us sequencing metadata
 
 The field "library_ID" is the unique identifier of a sequence.
 These IDs _must be unique_ across your research project.
+
+As with samples and isolates, here is a flowchart to aid in filling out the fields:
+
+![A flowchart detailing which fields to fill out for isolates](diagrams/sequence_field_guide.png)
 
 ## Using IRIDA
 
