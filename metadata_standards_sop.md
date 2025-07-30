@@ -209,6 +209,9 @@ Refer to this
 ---
 config:
     markdownAutoWrap: false
+    flowchart:
+      wrappingWidth: 1000
+      defaultRenderer: elk
 ---
 graph TD
 
