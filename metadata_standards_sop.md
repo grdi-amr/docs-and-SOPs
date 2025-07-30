@@ -276,6 +276,9 @@ In general, try following the same principles as Sample IDs (although for isolat
 If you need to rename your isolate IDS, please put their original names under the "alternative_isolate_IDs" column.
 
 As with samples, please provide the metadata for all isolates that your research project has detected (even if they will not go on to be sequenced or otherwise analysed!).
+The following may help understand which fields to fill out for your isolates:
+
+![A flowchart detailing which fields to fill out for isolates](diagrams/isolate_field_guide.png)
 
 ## Sequencing data
 
