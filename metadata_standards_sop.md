@@ -1,6 +1,6 @@
 # An SOP for the standardization and submission of GRDI-AMR2 metadata and sequence data
 
-Version 1.1
+Version 1.2
 
 Written by Emil Jurga and Gabriel Wajnberg
 
