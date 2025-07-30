@@ -218,7 +218,7 @@ Including this information will make your data more useful for future analyses, 
 
 The first step in the data harmonization is to identify any fields that you might reasonably be able apply to your samples.
 Look through the fields and their descriptions to see if any apply.
-Taking a look at the allowed terms might help with deciding if a field could applies.
+Taking a look at the allowed terms might help with deciding if a field fits your data.
 The [GitHub repo of the standard]((https://github.com/cidgoh/GRDI_AMR_One_Health)) contains both field descriptions, possible terms, and SOPs for filling out fields.
 A useful SOP to follow alongside this one is the [Metadata Curation SOP](https://github.com/cidgoh/GRDI_AMR_One_Health/blob/main/SOPs/GRDI_Metadata-Curation-SOP-13.4.pdf),
 which provides guidance on each field and the terms used for curation.
@@ -314,7 +314,7 @@ Contact Emil Jurga OR the [NML's Science IT Helpdesk](mailto:helpdesk@nml-lmn.ph
       Create one IRIDA sample for every sample or isolate that has sequence data associated with it.
     - For whole genome sequences, the irida sample name should be the "isolate_ID".
     - For metagenomic sequences, the irida sample name should be the "sample_collector_sample_ID".
-    - For sequences derived from "pooled samples", use whatever ID uniquel identifies the pooled sample.
+    - For sequences derived from "pooled samples", use whatever ID uniquely identifies the pooled sample.
     - There is no need to add metadata to the IRIDA samples (the metadata will be stored in the VMR which will link to IRIDA)
 7. Upload sequences
 
