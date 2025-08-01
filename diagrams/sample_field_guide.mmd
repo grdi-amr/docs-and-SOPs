@@ -51,12 +51,13 @@ hostFields@{shape: procs, label: "host (common name)
                                   host (food production_name)"}
 hostOrigin@{shape: proc, label: "host_origin_geo_loc_name (country)"}
 
-sam --> what -->|"Is it meant to be eaten by humans?"| food -->|"Is it **imported?**"          | foodImport
-                                                       food -->|"**What** is it?"              | foodFields
-                                                       food -->|"Is it an **animal product?**" | foodSource --> a@{shape: dbl-circ, label: "**DO NOT 
-                                                                                                                                       FILL OUT 
-                                                                                                                                       HOST 
-                                                                                                                                       FIELDS**"}
+sam --> what -->|"Is it meant to be eaten?"| food -->|"Is it **imported?**"          | foodImport
+                                             food -->|"**What** is it?"              | foodFields
+                                             food -->|"**Where** was it taken from?" | envWhere
+                                             food -->|"Is it an **animal product?**" | foodSource --> a@{shape: dbl-circ, label: "**DO NOT 
+                                                                                                                                    FILL OUT 
+                                                                                                                                    HOST 
+                                                                                                                                    FIELDS**"}
         what -->|"Was the sample taken from an **organism?**"| ana -->|"What **part?**"                                | anaFields
                                                                ana -->|"What **organism?**"                            | hostFields
                                                                ana -->|"Do you know **where** the organism was?"       | envWhere
