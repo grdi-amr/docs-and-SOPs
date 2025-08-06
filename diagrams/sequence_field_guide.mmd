@@ -1,0 +1,42 @@
+---
+config:
+    htmlLabels: false
+    markdownAutoWrap: false
+    flowchart:
+      wrappingWidth: 1000
+      defaultRenderer: elk
+---
+graph LR
+
+seq@{shape: circle,  label: "A Sequence"}
+who@{shape: procs, label: "**Agency:** sequenced_by
+                           **Lab:** sequenced_by_laboratory_name
+                           **Name:** sequenced_by_contact_name
+                           **Email:** sequenced_by_contact_email"}
+when@{shape: proc, label: "sequencing_date"}
+why@{shape: proc, label: "purpose_of_sequencing"}
+what@{shape: procs, label: "sequencing_assay_type
+                            _(e.g., WGS, MTG, 16S)_"}
+howExt@{shape: procs, label: "library_preparation_kit
+                              DNA_fragment_length
+                              genomic_target_enrichment_method
+                              genomic_target_enrichment_method_details
+                              amplicon_pcr_primer_scheme
+                              amplicon_size"}
+howSeq@{shape: procs, label: "sequencing_platform,
+                              sequencing_instrument,
+                              sequencing_flow_cell_version
+                              sequencing_protocol"}
+files@{shape: procs, label: "r1_fastq_filename
+                             r2_fastq_filename
+                             fast5_filename"}
+
+seq -->|"**Who** sequenced it?"| who
+seq -->|"**How** was the DNA extracted/prepared?" | howExt
+seq -->|"**How** was this sequenced?"   | howSeq
+seq -->|"**When** was this sequenced?"  | when
+seq -->|"**Why** was this sequenced?"   | why
+seq -->|"**What** is the sequence?"     | what
+seq -->|"**What** are the files called?"| files
+
+

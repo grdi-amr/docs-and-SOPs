@@ -1,6 +1,6 @@
 # An SOP for the standardization and submission of GRDI-AMR2 metadata and sequence data
 
-Version 1.1
+Version 1.2
 
 Written by Emil Jurga and Gabriel Wajnberg
 
@@ -203,15 +203,9 @@ These samples can still provide valuable information for risk-management and doc
 
 Not every field in the GRDI One Health standard is applicable to every sample type.
 There are fields reserved for food samples, fields for environmental samples, and still also for samples taken from a host organism (e.g., anatomical samples).
-Refer to this
+Refer to this flowchart help you get started on which fields to fill out for your samples.
 
-```mermaid
-graph TD
-
-sam("Sample") --> |"`**When** was it collected`"| time("fields")
-
-```
-
+![A flowchart detailing which fields to fill out for samples](diagrams/sample_field_guide.png)
 
 ### Identifying sample groups
 
@@ -224,7 +218,7 @@ Including this information will make your data more useful for future analyses, 
 
 The first step in the data harmonization is to identify any fields that you might reasonably be able apply to your samples.
 Look through the fields and their descriptions to see if any apply.
-Taking a look at the allowed terms might help with deciding if a field could applies.
+Taking a look at the allowed terms might help with deciding if a field fits your data.
 The [GitHub repo of the standard]((https://github.com/cidgoh/GRDI_AMR_One_Health)) contains both field descriptions, possible terms, and SOPs for filling out fields.
 A useful SOP to follow alongside this one is the [Metadata Curation SOP](https://github.com/cidgoh/GRDI_AMR_One_Health/blob/main/SOPs/GRDI_Metadata-Curation-SOP-13.4.pdf),
 which provides guidance on each field and the terms used for curation.
@@ -283,6 +277,10 @@ If you need to rename your isolate IDS, please put their original names under th
 
 As with samples, please provide the metadata for all isolates that your research project has detected (even if they will not go on to be sequenced or otherwise analysed!).
 
+The following may help understand which fields to fill out for your isolates:
+
+![A flowchart detailing which fields to fill out for isolates](diagrams/isolate_field_guide.png)
+
 ## Sequencing data
 
 Most of the GRDI-AMR2 work packages are leveraging sequencing data of some kind.
@@ -293,6 +291,10 @@ After this has been cleared, you may proceed with sending us sequencing metadata
 
 The field "library_ID" is the unique identifier of a sequence.
 These IDs _must be unique_ across your research project.
+
+As with samples and isolates, here is a flowchart to aid in filling out the fields:
+
+![A flowchart detailing which fields to fill out for isolates](diagrams/sequence_field_guide.png)
 
 ## Using IRIDA
 
@@ -312,7 +314,7 @@ Contact Emil Jurga OR the [NML's Science IT Helpdesk](mailto:helpdesk@nml-lmn.ph
       Create one IRIDA sample for every sample or isolate that has sequence data associated with it.
     - For whole genome sequences, the irida sample name should be the "isolate_ID".
     - For metagenomic sequences, the irida sample name should be the "sample_collector_sample_ID".
-    - For sequences derived from "pooled samples", use whatever ID uniquel identifies the pooled sample.
+    - For sequences derived from "pooled samples", use whatever ID uniquely identifies the pooled sample.
     - There is no need to add metadata to the IRIDA samples (the metadata will be stored in the VMR which will link to IRIDA)
 7. Upload sequences
 

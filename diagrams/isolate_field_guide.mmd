@@ -1,0 +1,34 @@
+---
+config:
+    htmlLabels: false
+    markdownAutoWrap: false
+    flowchart:
+      wrappingWidth: 1000
+      defaultRenderer: elk
+---
+graph LR
+
+iso@{shape: circle,  label: "An Isolate"}
+
+how@{shape: proc, label: "microbiological_method"}
+who@{shape: procs, label: "**Agency:** isolated_by
+                           **Lab:** isolated_by_laboratory_name
+                           **Name:** isolated_by_contact_name
+                           **Email:** isolated_by_contact_email"}
+when@{shape: procs, label: "isolation_date
+                            isolate_received_date"}
+what@{shape: procs, label: "organism
+                            serovar
+                            phagetype"}
+howKnow@{shape: procs, label: "taxonomic_identification_process
+                               taxonomic_identification_details
+                               serotyping_method"}
+irida@{shape: procs, label: "IRIDA_isolate_ID,
+                             IRIDA_project_ID"}
+
+iso -->|"**Who** isolated it?"     | who
+iso -->|"**When** was it isolated?"| when
+iso -->|"**How** was it isolated?" | how
+iso -->|"**What** is it?"          | what -->|"**How** do you know this?"| howKnow
+iso -->|"Is this isolate on IRIDA?"| irida
+
