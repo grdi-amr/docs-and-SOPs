@@ -31,16 +31,6 @@ It also outlines the process for submitting data to the database, as well as to 
     - [Gabriel Wajnberg](mailto:gabriel.wajnberg@inspection.gc.ca) (CFIA). For data submission, data export, NCBI submissions, and data standard new term or field requests.
     - [Emil Jurga](mailto:emil.jurga@phac-aspc.gc.ca) (PHAC). Same as Gabriel Wajnberg, but additionally for questions regarding IRIDA and the Science Network.
 
-## Connecting to the Science Network
-
-Access to the NMLB's science network network has been extended to all members of the GRDI-AMR2 to support the project.
-Access is required to upload and access sequences on IRIDA, and view dashboards connected to the VMR.
-While most researchers _should_ already have their own science network account, it may need to be renewed.
-Please contact [Emil Jurga](mailto:emil.jurga@phac-aspc.gc.ca) or the [NML's Science IT Helpdesk](mailto:helpdesk@nml-lmn.phac-aspc.gc.ca) to either renew or request an account.
-The VPN address is [remote.corefacility.ca](http://remote.corefacility.ca) (using cisco AnyConnect).
-However, most users should connect to the science network via [NMLconnect](https://connect.nml-lmn.phac-aspc.gc.ca/), which enables access through the corporate VPN.
-Log in to this portal using your **science credentials** (_username_@**CSCScience.ca**). 
-The chrome application has many bookmarks pre-configured to access most of what you'll need, including IRIDA.
 
 ## Tools
 

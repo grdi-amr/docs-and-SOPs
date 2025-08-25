@@ -2,7 +2,11 @@
 
 This repo is for hosting or linking documentation for the GRDI-AMR2 Project.
 
-## Important Links
+## Links to documentation
+
+### Science Network:
+
+[Connecting to the Science Network](./sciNet_access.md): For help connecting to the NMLB's Science Network, which is required to access IRIDA to store sequences, and the dashboards.
 
 ### Metadata Standardization:
 
