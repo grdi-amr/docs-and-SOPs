@@ -22,10 +22,10 @@ This is the account used to access the science network.
 It generally must be requested via a ticket to the [helpdesk](mailto:helpdesk@nml-lmn.phac-aspc.gc.ca),
 and for externals (i.e., those outside of the NMLB) requires a business justification and additional security checks.
 Fortunately, members of the GRDI-AMR2 project _should_ already have a Science Account, which were requested at the onset of the project.
-Should your account requires renewal contact either the [helpdesk](mailto:helpdesk@nml-lmn.phac-aspc.gc.ca) or [Emil Jurga](mailto:emil.jurga@phac-aspc.gc.ca).
+Should your account require renewal, contact either the [helpdesk](mailto:helpdesk@nml-lmn.phac-aspc.gc.ca) or [Emil Jurga](mailto:emil.jurga@phac-aspc.gc.ca).
 
 Note that for some applications, your science account _username_ must be appended with the science network's domain, which is @CSCscience.ca
-(e.g., for account flast, the fully qualified account name is flast@cscscience.ca).
+(e.g., for account `flast`, the fully qualified account name is `flast@cscscience.ca`).
 
 ## Accessing the science network
 
@@ -52,7 +52,7 @@ The chrome application has many bookmarks pre-configured to access most of what 
 Another way to access the is via the VPN, which must be configured via the cisco AnyConnect application (the same application used to access the corporate VPN).
 The science network VPN is `remote.corefacility.ca` (be warned - this address may be subject to change as the NMLB upgrades its infrastructure).
 In general, this application is locked-down on corporate PCs, and will require a ticket submission to your agency's IT helpdesk.
-Note also that this method of connection is impossible if your corporate PC requires a connection to the Corporate VPN -- use [NMLconnect](https://connect.nml-lmn.phac-aspc.gc.ca/) instead in this case.
+Note also that this method of connection is impossible if your corporate PC requires a connection to the Corporate VPN - use [NMLconnect](https://connect.nml-lmn.phac-aspc.gc.ca/) instead in this case.
 
 Once connected to the VPN, the science network webapps can be access using a web browser.
 
