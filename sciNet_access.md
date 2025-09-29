@@ -19,20 +19,20 @@ Alternatively, you can contact [Emil Jurga](mailto:emil.jurga@phac-aspc.gc.ca) w
 ## Your Science Network Account
 
 This is the account used to access the science network.
-It generally must be requested via a ticket to the [helpdesk](mailto:helpdesk@nml-lmn.phac-aspc.gc.ca),
-and for externals (i.e., those outside of the NMLB) requires a business justification and additional security checks.
+It generally must be requested via a ticket to the [helpdesk](mailto:helpdesk@nml-lmn.phac-aspc.gc.ca).
+For externals (i.e., those outside of the NMLB), the request will require a business justification and additional security checks.
 Fortunately, members of the GRDI-AMR2 project _should_ already have a Science Account, which were requested at the onset of the project.
 Should your account require renewal, contact either the [helpdesk](mailto:helpdesk@nml-lmn.phac-aspc.gc.ca) or [Emil Jurga](mailto:emil.jurga@phac-aspc.gc.ca).
 
-Note that for some applications, your science account _username_ must be appended with the science network's domain, which is @CSCscience.ca
+Note that for some applications, your science account _username_ must be appended with the science network's domain, which is `@CSCscience.ca`
 (e.g., for account `flast`, the fully qualified account name is `flast@cscscience.ca`).
 
 ## Accessing the science network
 
 There are currently multiple ways to connect to the Science Network and access its applications:
 
-1. **Recommeded**: via [NMLconnect](https://connect.nml-lmn.phac-aspc.gc.ca/).
-2. Via the VPN. This method of connection is **legacy**, but has been extended to some users.
+1. **Recommended**: via [NMLconnect](https://connect.nml-lmn.phac-aspc.gc.ca/).
+2. Via the VPN.
 
 ### Via NMLconnect
 
@@ -50,11 +50,12 @@ The chrome application has many bookmarks pre-configured to access most of what 
 ### Via the VPN
 
 Another way to access the is via the VPN, which must be configured via the cisco AnyConnect application (the same application used to access the corporate VPN).
-The science network VPN is `remote.corefacility.ca` (be warned - this address may be subject to change as the NMLB upgrades its infrastructure).
-In general, this application is locked-down on corporate PCs, and will require a ticket submission to your agency's IT helpdesk.
-Note also that this method of connection is impossible if your corporate PC requires a connection to the Corporate VPN - use [NMLconnect](https://connect.nml-lmn.phac-aspc.gc.ca/) instead in this case.
+However, this method of connection is impossible if your corporate PC requires a connection to the Corporate VPN - use [NMLconnect](https://connect.nml-lmn.phac-aspc.gc.ca/) instead in this case.
+The science network VPN is `vpn.nml-lnm.phac-aspc.gc.ca`.
+Note that some users may have previously connected to the network via the domain `remote.corefacility.ca`; this domain **has been retired** and is no longer accessible.
+In general, the AnyConnect application is locked-down on corporate PCs, and will require a ticket submission to your agency's IT helpdesk to configure the domain.
 
-Once connected to the VPN, the science network webapps can be access using a web browser.
+Once connected to the VPN, the science network webapps can be accessed using a web browser.
 
 ## Accessing IRIDA
 
